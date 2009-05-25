@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edit:EditTopicViewBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+    xmlns:edit="org.integratedsemantics.flexibleshare.share.discussions.edit.*"
+    width="750" height="600" title="Edit Topic" styleName="dialog" showCloseButton="true">
+
+    <mx:Style source="edit.css"/>
+    
+    <mx:Form styleName="mainArea">
+        <mx:FormItem label= "Title:"  width="400"  styleName="mainArea">
+            <mx:TextInput id="titleTextInput" width="250" text="" styleName="input"/>
+        </mx:FormItem>
+    </mx:Form>
+    
+    <mx:HTML id="htmlControl" width="703" height="406" styleName="input"/>
+    
+    <mx:Spacer height="20"/>
+                  
+    <mx:HBox width="100%" styleName="buttonArea"> 
+        <mx:Button id="okBtn" label="Save"/> 
+        <mx:Spacer width="20"/>
+        <mx:Button id="cancelBtn" label="Cancel"/>
+    </mx:HBox> 
+    
+</edit:EditTopicViewBase>

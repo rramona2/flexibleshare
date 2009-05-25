@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<wiki:WikiPodBase
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:wiki="org.integratedsemantics.flexibleshare.share.wiki.*"
+	width="100%" height="100%"> 
+    
+    <mx:VBox width="100%" height="100%">
+        <mx:HBox>
+            <mx:Button label="New Page" id="newWikiPageBtn" click="onNewWikiPage(event)"/>            
+        </mx:HBox>
+        <mx:HBox width="100%" height="100%">
+        	<mx:Tree id="wikiTree" showRoot="false" dataProvider="{treeRoot}" change="onTreeChange(event)" width="35%" height="100%" />
+        	<mx:VBox width="65%" height="100%">    	    
+                <mx:HTML id="htmlControl" width="100%" height="100%" styleName="input"/>    		
+        		<mx:HBox>
+        			<mx:Button label="Edit" id="editBtn" click="onEdit(event)"/>			
+                    <mx:Button label="Delete" id="deleteBtn" click="onDelete(event)" enabled="false"/>         
+                    <mx:Button label="Tag" id="tagBtn" click="onTag(event)" enabled="false"/>         
+        		</mx:HBox>
+            </mx:VBox>
+        </mx:HBox>                          
+    </mx:VBox>  
+</wiki:WikiPodBase>
+

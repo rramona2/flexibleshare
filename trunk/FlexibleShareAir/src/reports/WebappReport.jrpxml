@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperPrint PUBLIC "-//JasperReports//DTD JasperPrint//EN" "http://jasperreports.sourceforge.net/dtds/jasperprint.dtd">
+
+<jasperPrint name="WebappReport" pageWidth="595" pageHeight="842" locale="en_US" timezone="GMT">
+	<property name="net.sf.jasperreports.export.xml.page.count" value="2"/>
+	<origin group="CityGroup" band="groupHeader"/>
+	<origin group="CityGroup" band="groupFooter"/>
+	<origin band="title"/>
+	<origin band="pageHeader"/>
+	<origin band="detail"/>
+	<origin band="pageFooter"/>
+	<origin band="summary"/>
+	<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Arial_Italic" isDefault="false" fontName="Arial" fontSize="12" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Oblique" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="pageHeader" isDefault="false" style="Arial_Bold" forecolor="#FFFFFF" backcolor="#333333"/>
+	<page>
+		<frame>
+			<reportElement x="40" y="50" width="515" height="40" backcolor="#E0E0E0" origin="2"/>
+			<box>
+				<topPen lineWidth="1.0"/>
+			</box>
+			<image scaleImage="Clip" hAlign="Left" vAlign="Top" hyperlinkType="Reference" hyperlinkReference="http://jasperreports.sourceforge.net">
+				<reportElement x="5" y="5" width="165" height="30" origin="2"/>
+				<imageSource isEmbedded="true">
+					<![CDATA[R0lGODlhiwAZAPcAAAQCBISChPz+/JwCBJyanARiHAAT+QAAdwAAHgIAHAAA+QAAd2moCADnAgAS
+AAAAAACRGgCBAgD5AAB3AACY2AAqIQD5EwB3AAD/AAD/AAD/AAD/AA90AADoAAASAAAAAABcQgDD
+BAD8AAB3AAh4AOYTAhITAAAAAAAKAQACAAAAAAAAAGQaQpkCAPgAAHcAAAAAAgAAABMAAAAAAOAA
+AGIAABMAAAAAAAAAEAAAAAAAAAAAAOQAAOUAABIAAAAAAIgAJAYA6BMAEgAAAJgAAOYAABIAAAAA
+AJEAZIEAmfkA+HcAd6AAAJkAAPgAAHcAAP8AQ/8AbP8AE/8AAKgACOYA6RIAEgAAAIIAhMgAAPwA
+AHcAAGgAiBoABhMAEwAAAOgAA2IAABMAAAAAADQAAAAAAAAAAMAAANMAhMcAAPwACHcAAgAA/wEA
+/wAA/wAA/wEAhAEAAAEAhgEAAKAAAOYA7BIA/QAAf5EAAIEAGvkAE3cAAFAAeJYAuvgAE3cAAP8A
+eP8Auv8AE/8AAHQAeOYAuhIAEwAAAFgAsJoA6E8AEnwAAAAAAAAAsBMAEwAAAAAAAAAAAAAAAAAA
+AOB4B6/nABUSAAAAABYAGAAA6QAAEsAAAOhkAGKZABP4AAB3AACIAADnAAASAAAAAH5uAADsAABO
+AMB8AAAAAAAAAAAAAAAAAP8AoP8A6P8AEv8AAP/oK/9iAP8TAP8AAADR/wAQ/wBP/wB8/wCqKwDs
+AABOAAB8AACo+ADn8gASEgAAAADQAAAQABNPAAB8AGoAsAAA6AAAEgAAAAB4/mK6WBMTSwAAABCu
+kD+s6E9OEnx8ABb/WwD/YgD/TsD/AAGsxOfo6BISEgAAAADXrgGsrABOTgB8fBhsV+Zv6RJOEgAA
+AJwo0/mW/xJO/wAAf5zQLPkQ6RJPEgB8AJGoeIHnuvkSE3cAAFAArpYArPgATncAfP/AeP/cuv9P
+E/8AAFQAAecAABIwAAAAAOyEANcAAE6GAHwAAAB3bgDC/RP4RgB3ACH5BAAAAAAALAAAAACLABkA
+Bwj/AAEIHEiwoMGDCBMqXMiwocOHEAkKmEixosWLGDNq3MiR4oCPIEOKHEmypMmTKD8K7JgxgEuW
+MGNWTEmzps2aK2VSdBlAp0+ON4PW9Bg058+jSDEKXXqS6E2jOnlO5Cl1KtWeAl5S3XnValcBA5R+
+vDgW7MyyZ8WSDWuxJFSZUq/GlduTbl26WfGyJZtxb9u+gP+KFfm2IoCNc7Em9ppXsdaXjSNH3ouW
+MmWiHjFPtKwZbGXLhA9jHKhxceSqplM/dtyT8+bOrs1uvjwb9menIQsLEDjAqGjGqFcDh6z6LmvZ
+njPXfr0ceWXbTm2Hvshb5WHSjCtu3aqduPDT3lvD/x7fPLZ50GdNvq0OcmCAnFUbB48/X/52yDNx
+oxWcnHl/5yPh1pZbv+0GAEkA8LTSfNx5dRx4ckmW32whBfafefp9VmGG1lHEnkg8EUDAYcVZdN9x
+8XGF1YSebdgiSORdyOGMHOb0YUghikgAhMOhGJ5kprEYYHkxPkehizCWN9JKN4KUo448RllifSn6
+N6SMRGb5YpItSpfbQCU9CeWUP1JZJn7KbYmhlkaqiZ6S0/2UWFd22TfniXwduR+L/PFHUp/pfXkU
+g4Sy1mCEEqb554CDrcWhX3u62VuBcKEZU5U/LfUoU0LpxtFXUVmaqVCbcvoUpSw1GOqKSGmqp6lL
+eRua1KwywWorp7LSqitQt/Z6akTABivssMQOGxAAOw==]]>
+				</imageSource>
+			</image>
+			<text textAlignment="Right" textHeight="25.297852" lineSpacingFactor="1.1499023" leadingOffset="-4.302246" hyperlinkType="None">
+				<reportElement x="175" y="5" width="335" height="30" origin="2"/>
+				<font size="22"/>
+				<textContent><![CDATA[Address Report]]></textContent>
+			</text>
+		</frame>
+		<rectangle radius="0">
+			<reportElement x="40" y="105" width="515" height="15" forecolor="#333333" backcolor="#333333" origin="3"/>
+		</rectangle>
+		<text textAlignment="Center" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="pageHeader" mode="Opaque" x="40" y="105" width="55" height="15" origin="3"/>
+			<textContent><![CDATA[ID]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="pageHeader" mode="Opaque" x="95" y="105" width="205" height="15" origin="3"/>
+			<textContent><![CDATA[Name]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="pageHeader" mode="Opaque" x="300" y="105" width="255" height="15" origin="3"/>
+			<textContent><![CDATA[Street]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="124" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="124" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  1. Berne]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="139" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="144" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[22]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="144" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Bill Ott]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="144" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[250 - 20th Ave.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="159" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="164" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[9]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="164" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[James Schneider]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="164" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[277 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="179" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="179" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="180" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="180" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[2]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="204" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="204" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  2. Boston]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="219" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="224" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[32]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="224" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Michael Ott]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="224" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[339 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="239" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="244" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[23]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="244" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Julia Heiniger]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="244" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[358 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="259" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="259" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="260" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="260" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[2]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="284" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="284" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  3. Chicago]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="299" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="304" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[39]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="304" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Mary Karsen]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="304" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[202 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="319" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="324" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[35]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="324" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[George Karsen]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="324" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[412 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="339" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="344" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[11]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="344" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Julia White]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="344" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[412 Upland Pl.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="359" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="359" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="360" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="360" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[3]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="384" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="384" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  4. Dallas]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="399" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="404" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[47]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="404" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Janet Fuller]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="404" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[445 Upland Pl.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="419" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="424" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[43]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="424" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Susanne Smith]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="424" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[2 Upland Pl.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="439" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="444" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[40]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="444" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Susanne Miller]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="444" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[440 - 20th Ave.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="459" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="464" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[36]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="464" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[John Steel]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="464" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[276 Upland Pl.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="479" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="484" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[37]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="484" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Michael Clancy]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="484" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[19 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="499" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="504" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[19]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="504" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Susanne Heiniger]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="504" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[86 - 20th Ave.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="519" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="524" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[10]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="524" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Anne Fuller]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="524" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[135 Upland Pl.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="539" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="544" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[4]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="544" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Sylvia Ringer]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="544" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[365 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="559" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="564" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[0]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="564" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Laura Steel]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="564" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[429 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="579" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="579" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="580" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="580" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[9]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="604" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="604" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  5. Lyon]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="619" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="624" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[38]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="624" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Andrew Heiniger]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="624" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[347 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="639" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="644" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[28]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="644" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Susanne White]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="644" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[74 - 20th Ave.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="659" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="664" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[17]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="664" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Laura Ott]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="664" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[443 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="679" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="684" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[2]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="684" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Anne Miller]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="684" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[20 Upland Pl.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="699" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="699" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="700" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="700" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[4]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="762" width="515" height="1" origin="5"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="240" y="772" width="80" height="15" origin="5"/>
+			<textContent><![CDATA[Page 1 of]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="320" y="772" width="75" height="15" origin="5"/>
+			<textContent><![CDATA[ 2]]></textContent>
+		</text>
+	</page>
+	<page>
+		<rectangle radius="0">
+			<reportElement x="40" y="55" width="515" height="15" forecolor="#333333" backcolor="#333333" origin="3"/>
+		</rectangle>
+		<text textAlignment="Center" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="pageHeader" mode="Opaque" x="40" y="55" width="55" height="15" origin="3"/>
+			<textContent><![CDATA[ID]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="pageHeader" mode="Opaque" x="95" y="55" width="205" height="15" origin="3"/>
+			<textContent><![CDATA[Name]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="pageHeader" mode="Opaque" x="300" y="55" width="255" height="15" origin="3"/>
+			<textContent><![CDATA[Street]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="74" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="74" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  6. New York]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="89" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="94" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[46]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="94" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Andrew May]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="94" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[172 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="109" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="114" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[44]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="114" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Sylvia Ott]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="114" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[361 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="129" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="134" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[41]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="134" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Bill King]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="134" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[546 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="149" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="149" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="150" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="150" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[3]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="174" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="174" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  7. Oslo]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="189" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="194" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[45]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="194" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Janet May]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="194" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[396 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="209" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="214" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[42]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="214" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Robert Ott]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="214" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[503 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="229" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="229" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="230" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="230" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[2]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="254" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="254" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  8. Paris]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="269" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="274" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[25]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="274" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Sylvia Steel]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="274" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[269 College Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="289" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="294" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[18]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="294" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Sylvia Fuller]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="294" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[158 - 20th Ave.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="309" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="314" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[5]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="314" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Laura Miller]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="314" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[294 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="329" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="329" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="330" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="330" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[3]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement x="40" y="354" width="515" height="15" forecolor="#C0C0C0" backcolor="#C0C0C0" origin="0"/>
+		</rectangle>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="40" y="354" width="515" height="15" origin="0"/>
+			<textContent><![CDATA[  9. San Francisco]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="369" width="515" height="1" origin="0"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="374" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[48]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="374" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[Robert White]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="374" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[549 Seventh Av.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="389" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement x="40" y="394" width="50" height="15" origin="4"/>
+			<textContent><![CDATA[7]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="95" y="394" width="200" height="15" origin="4"/>
+			<textContent><![CDATA[James Peterson]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="300" y="394" width="255" height="15" origin="4"/>
+			<textContent><![CDATA[231 Upland Pl.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="409" width="515" height="1" forecolor="#808080" origin="4"/>
+		</line>
+		<line>
+			<reportElement x="40" y="409" width="515" height="1" origin="1"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797">
+			<reportElement style="Arial_Bold" x="440" y="410" width="60" height="15" origin="1"/>
+			<textContent><![CDATA[Count :]]></textContent>
+		</text>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None" valueClass="java.lang.Integer">
+			<reportElement style="Arial_Bold" x="500" y="410" width="30" height="15" origin="1"/>
+			<textContent><![CDATA[2]]></textContent>
+		</text>
+		<text textAlignment="Center" textHeight="82.79297" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Italic" x="215" y="450" width="165" height="82" origin="6"/>
+			<textContent><![CDATA[There were 30 address records on this report from the following cities : 
+Berne, Boston, Chicago, Dallas, Lyon, New York, Oslo, Paris, San Francisco.]]></textContent>
+		</text>
+		<text textAlignment="Center" textHeight="27.597656" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement style="Arial_Bold" x="215" y="537" width="165" height="27" forecolor="#993300" origin="6"/>
+			<textContent><![CDATA[Hello! I'm the report's scriptlet object.]]></textContent>
+		</text>
+		<line>
+			<reportElement x="40" y="762" width="515" height="1" origin="5"/>
+		</line>
+		<text textAlignment="Right" textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="240" y="772" width="80" height="15" origin="5"/>
+			<textContent><![CDATA[Page 2 of]]></textContent>
+		</text>
+		<text textHeight="13.798828" lineSpacingFactor="1.1499023" leadingOffset="-2.3466797" hyperlinkType="None">
+			<reportElement x="320" y="772" width="75" height="15" origin="5"/>
+			<textContent><![CDATA[ 2]]></textContent>
+		</text>
+	</page>
+</jasperPrint>

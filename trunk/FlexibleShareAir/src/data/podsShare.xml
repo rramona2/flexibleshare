@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<views>
+    <view
+        id="view1"
+        label="Share">
+        <pod
+            id="pod11"
+            type="share"
+            title="Share Dashboard"
+            />
+        <pod
+            id="pod12"
+            type="calendar"
+            title="Calendar"
+            siteUrlName="s1"
+            />
+        <pod
+            id="pod13"
+            type="blog"
+            title="Blog"
+            siteUrlName="s1"
+            />
+        <pod
+            id="pod14"
+            type="wiki"
+            title="Wiki"
+            siteUrlName="s1"
+            />
+        <pod
+            id="pod15"
+            type="discussions"
+            title="Discussions"
+            siteUrlName="s1"
+            />
+        <pod
+            id="pod16"
+            type="sharedoclib"
+            title="Doc Lib"
+            siteUrlName="s1"
+            />
+    </view> 
+</views>

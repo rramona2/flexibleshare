@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<views>
+	<view
+		id="view0"
+		label="FlexSpaces">
+		<pod
+			id="pod01"
+			type="doclib"
+			title="DocLib"
+			/>
+		<pod
+			id="pod02"
+			type="search"
+			title="Search"
+			/>
+        <!--pod
+            id="pod03"
+            type="simplesearch"
+            title="Search"
+            /-->
+		<pod
+			id="pod04"
+			type="tasks"
+			title="Tasks"
+			/>
+		<pod
+			id="pod05"
+			type="wcm"
+			title="WCM"
+			/>
+		<!--pod
+			id="pod06"
+			type="flexspaces"
+			title="All FlexSpaces"
+			/-->
+		<pod
+			id="pod07"
+			type="localfiles"
+			title="Local Files"
+			/>
+        <!--pod
+            id="pod08"
+            type="html"
+            title="HTML"
+            url="http://www.google.com"            
+            /-->            
+	</view>
+</views>

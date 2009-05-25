@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app:FlexibleShareAppBase title="FlexibleShare+Air"
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:app="org.integratedsemantics.flexibleshare.app.*"
+	xmlns:business="org.integratedsemantics.flexspaces.control.delegate.*"
+    xmlns:control="org.integratedsemantics.flexspacesair.control.*"
+    xmlns:login="org.integratedsemantics.flexspaces.view.login.*" 
+	horizontalAlign="left"
+    width="1000" height="700"
+	backgroundSize="100%"
+	backgroundColor="#ffffff"
+    paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+	<mx:Style source="/assets/styles.css" />
+		
+    <business:Services id="services"/>
+
+    <control:AirAppController id="appController" />
+
+    <mx:ViewStack id="modeViewStack" width="100%" height="100%">
+    
+        <!-- before login, getting config -->
+        <mx:VBox width="100%" height="100%"/>
+
+	    <!-- login panel -->
+	    <mx:Box id="loginPanel" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+	        <login:LoginView id="loginView" loginPresModel="{flexSpacesAirPresModel.loginPresModel}" creationComplete="onLoginViewCreated(event)"/>
+	    </mx:Box>	
+	
+		<!-- after login, getting info -->
+		<mx:VBox width="100%" height="100%"/>
+		                  
+		<!-- after login, after get info, portal dashboard mode -->
+		<mx:VBox width="100%" height="100%">
+			<mx:TabBar
+				id="tabBar"
+				itemClick="onItemClickTabBar(event)"
+				height="35" 
+				dataProvider="viewStack" />
+			<mx:ViewStack
+				id="viewStack"
+				paddingTop="15"
+				width="100%" height="100%" />	
+		</mx:VBox>
+		
+ 	</mx:ViewStack> 		
+ 		
+</app:FlexibleShareAppBase>

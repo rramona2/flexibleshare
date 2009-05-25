@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PodContentBase
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns="com.esria.samples.dashboard.view.*"
+	xmlns:iframe="*"
+	width="100%" height="100%"		
+	creationComplete="init();"> 
+    
+    <mx:Script>
+        <![CDATA[
+        import org.integratedsemantics.flexspaces.model.AppModelLocator;
+
+		private function init():void
+		{
+			var model:AppModelLocator = AppModelLocator.getInstance();
+            var urlBegin:String;
+			
+            urlBegin = model.ecmServerConfig.protocol + "://" + model.ecmServerConfig.domain + ":" + model.ecmServerConfig.port + "/share/";
+            html.location = urlBegin + "login?username=" + model.userInfo.loginUserName + "&password=" + model.userInfo.loginPassword + "&success=" + urlBegin + "&failure=" + urlBegin;			
+
+			html.visible=true;
+		}
+        
+        ]]>
+    </mx:Script>                              
+           
+	<mx:HTML id="html" width="100%" height="100%"/>
+
+</PodContentBase>
+

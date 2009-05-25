@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<doclib:DocLibPodBase
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	width="100%" height="100%"		
+	verticalScrollPolicy="off"
+	backgroundColor="#000000"
+	paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0" 
+	verticalAlign="left" horizontalAlign="top"                
+	styleName="mainApplication" 
+	xmlns:doclib="org.integratedsemantics.flexibleshare.flexspaces.doclib.*">
+    
+    <doclib:DocLibAirView id="flexSpacesViewDocLib" flexSpacesAirPresModel="{presModel}" width="100%" height="100%"/>
+
+</doclib:DocLibPodBase>
+
+

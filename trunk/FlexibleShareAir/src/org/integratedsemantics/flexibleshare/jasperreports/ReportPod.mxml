@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PodContentBase
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns="com.esria.samples.dashboard.view.*"
+	xmlns:jr="net.sf.jasperreports.flex.view.*" 
+	width="100%" height="100%"				
+	paddingLeft="0" paddingTop="0" paddingBottom="0" paddingRight="0"
+	creationComplete="init();">
+	
+    <mx:Script>
+        <![CDATA[
+
+		private function init():void
+		{
+			viewer.url = "reports/WebappReport.jrpxml";
+		}
+        
+        ]]>
+    </mx:Script>                              
+           
+	<jr:Viewer id="viewer" width="100%" height="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off"/>
+
+</PodContentBase>
+
