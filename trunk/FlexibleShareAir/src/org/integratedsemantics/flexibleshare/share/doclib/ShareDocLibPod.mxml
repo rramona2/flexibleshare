@@ -4,12 +4,9 @@
 	xmlns:mx="http://www.adobe.com/2006/mxml"
 	width="100%" height="100%"		
 	verticalScrollPolicy="off"
-	backgroundColor="#000000"
 	paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0" 
 	verticalAlign="middle" horizontalAlign="center"                
-	styleName="mainApplication" 
-	xmlns:doclib="org.integratedsemantics.flexibleshare.share.doclib.*">
-    
+	xmlns:doclib="org.integratedsemantics.flexibleshare.share.doclib.*">   
                                                     
     <doclib:ShareDocLibAirView site="{site}" id="shareDocLibView" flexSpacesAirPresModel="{presModel}" width="100%" height="100%"/>
 

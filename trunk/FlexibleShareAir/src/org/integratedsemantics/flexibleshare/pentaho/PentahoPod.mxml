@@ -30,7 +30,7 @@
   	
 	  <mx:VBox height="100%" width="40%">
 	  
-	    <mx:Panel width="100%" height="100%" title="Revenue By Territory">
+	    <mx:Panel width="100%" height="100%" title="Revenue By Territory" styleName="viewStyle">
 	      <mx:PieChart id="tPie" width="100%" height="100%" showDataTips="true" dataTipFunction="formatTPieDataTip">
 	        <mx:itemClick>
 	        selectedTerritory = event.hitData.item.TERRITORY;
@@ -45,7 +45,7 @@
 	      </mx:PieChart>
 	    </mx:Panel>
 	    
-	    <mx:Panel width="100%" height="100%" title="Revenue By Product Line (Territory = {selectedTerritory})">
+	    <mx:Panel width="100%" height="100%" title="Revenue By Product Line (Territory = {selectedTerritory})" styleName="viewStyle">
 	      <mx:PieChart id="plPie" width="100%" height="100%" showDataTips="true">
 	        <mx:itemClick>
 	        selectedProductLine = event.hitData.item.PRODUCTLINE;
@@ -62,7 +62,7 @@
 	    
 	  </mx:VBox>
 	
-	  <mx:Panel width="100%" height="100%" title="Top 10 Customers (Territory = {selectedTerritory} | Product Line = {selectedProductLine})">
+	  <mx:Panel width="100%" height="100%" title="Top 10 Customers (Territory = {selectedTerritory} | Product Line = {selectedProductLine})" styleName="viewStyle">
 	    <mx:BarChart id="ttcBar" width="100%" height="100%" showDataTips="true">
 	      <mx:series>
 	        <mx:BarSeries xField="sales" showDataEffect="{ttcSlide}"/>

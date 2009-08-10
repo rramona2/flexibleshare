@@ -7,9 +7,8 @@
     xmlns:login="org.integratedsemantics.flexspaces.view.login.*" 
 	horizontalAlign="left"
     width="1000" height="700"
-	backgroundSize="100%"
-	backgroundColor="#ffffff"
     paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+
 	<mx:Style source="/assets/styles.css" />
 		
     <business:Services id="services"/>
@@ -35,7 +34,8 @@
 				id="tabBar"
 				itemClick="onItemClickTabBar(event)"
 				height="35" 
-				dataProvider="viewStack" />
+				dataProvider="viewStack"
+				styleName="viewTabs" tabStyleName="viewTab" />
 			<mx:ViewStack
 				id="viewStack"
 				paddingTop="15"
