@@ -15,33 +15,38 @@
 
     <control:AirAppController id="appController" />
 
-    <mx:ViewStack id="modeViewStack" width="100%" height="100%">
+    <mx:VBox id="vbox" width="100%" height="100%">
+        <mx:ApplicationControlBar dock="true" width="100%" height="30" verticalAlign="middle">
+            <mx:Button label="Cascade" click="cascade()" />
+            <mx:Button label="Tile" click="tile()" />
+        </mx:ApplicationControlBar>
+        <mx:ViewStack id="modeViewStack" width="100%" height="100%">
+        
+            <!-- before login, getting config -->
+            <mx:VBox width="100%" height="100%"/>
     
-        <!-- before login, getting config -->
-        <mx:VBox width="100%" height="100%"/>
-
-	    <!-- login panel -->
-	    <mx:Box id="loginPanel" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
-	        <login:LoginView id="loginView" loginPresModel="{flexSpacesAirPresModel.loginPresModel}" creationComplete="onLoginViewCreated(event)"/>
-	    </mx:Box>	
-	
-		<!-- after login, getting info -->
-		<mx:VBox width="100%" height="100%"/>
-		                  
-		<!-- after login, after get info, portal dashboard mode -->
-		<mx:VBox width="100%" height="100%">
-			<mx:TabBar
-				id="tabBar"
-				itemClick="onItemClickTabBar(event)"
-				height="35" 
-				dataProvider="viewStack"
-				styleName="viewTabs" tabStyleName="viewTab" />
-			<mx:ViewStack
-				id="viewStack"
-				paddingTop="15"
-				width="100%" height="100%" />	
-		</mx:VBox>
-		
- 	</mx:ViewStack> 		
- 		
+    	    <!-- login panel -->
+    	    <mx:Box id="loginPanel" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+    	        <login:LoginView id="loginView" loginPresModel="{flexSpacesAirPresModel.loginPresModel}" creationComplete="onLoginViewCreated(event)"/>
+    	    </mx:Box>	
+    	
+    		<!-- after login, getting info -->
+    		<mx:VBox width="100%" height="100%"/>
+    		                  
+    		<!-- after login, after get info, portal dashboard mode -->
+    		<mx:VBox width="100%" height="100%">
+    			<mx:TabBar
+    				id="tabBar"
+    				itemClick="onItemClickTabBar(event)"
+    				height="35" 
+    				dataProvider="viewStack"
+    				styleName="viewTabs" tabStyleName="viewTab" />
+    			<mx:ViewStack
+    				id="viewStack"
+    				paddingTop="0"
+    				width="100%" height="100%" />	
+    		</mx:VBox>
+    		
+     	</mx:ViewStack> 		
+    </mx:VBox> 		
 </app:FlexibleShareAppBase>

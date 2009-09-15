@@ -13,7 +13,8 @@ package org.integratedsemantics.flexibleshare.app
 	import flash.events.Event;
 	import flash.utils.Dictionary;
 	
-	import mx.containers.Canvas;
+	import flexlib.mdi.containers.MDICanvas;
+	
 	import mx.containers.ViewStack;
 	import mx.controls.Alert;
 	import mx.controls.TabBar;
@@ -43,11 +44,6 @@ package org.integratedsemantics.flexibleshare.app
 	import org.integratedsemantics.flexibleshare.share.doclib.ShareDocLibPod;
 	import org.integratedsemantics.flexibleshare.share.wiki.WikiPod;
 	import org.integratedsemantics.flexspaces.control.event.GetInfoEvent;
-	import org.integratedsemantics.flexspaces.model.global.AppConfig;
-	import org.integratedsemantics.flexspaces.model.global.CalaisConfig;
-	import org.integratedsemantics.flexspaces.model.global.EcmServerConfig;
-	import org.integratedsemantics.flexspaces.model.global.GoogleMapConfig;
-	import org.integratedsemantics.flexspaces.model.global.ThumbnailConfig;
 	import org.integratedsemantics.flexspaces.view.login.LoginDoneEvent;
 	import org.integratedsemantics.flexspaces.view.login.LoginViewBase;
 	import org.integratedsemantics.flexspacesair.app.AirAppBase;
@@ -89,7 +85,11 @@ package org.integratedsemantics.flexibleshare.app
         {
         	super.onApplicationContextComplete(event);
         	
-            modeViewStack.selectedIndex = LOGIN_MODE_INDEX;                	
+            modeViewStack.selectedIndex = LOGIN_MODE_INDEX;
+            
+            // if don't need to login with alfresco use these lines instead of selecting login mode
+            //modeViewStack.selectedIndex = MAIN_VIEW_MODE_INDEX; 
+            //onPortalCreationComplete();                              	
         }
 					
 		protected function onPortalCreationComplete():void
@@ -153,15 +153,19 @@ package org.integratedsemantics.flexibleshare.app
 			for (var i:Number = 0; i < len; i++) // Loop through the view nodes.
 			{
 				// Create a canvas for each view node.
-				var canvas:Canvas = new Canvas();
+				//mdi var canvas:Canvas = new Canvas();
+                var canvas:MDICanvas = new MDICanvas();				
 				// PodLayoutManager handles resize and should prevent the need for
 				// scroll bars so turn them off so they aren't visible during resizes.
 				canvas.horizontalScrollPolicy = "off";
 				canvas.verticalScrollPolicy = "off";
 				canvas.label = viewXMLList[i].@label;
 				canvas.percentWidth = 100;
-				canvas.percentHeight = 100;
+				canvas.percentHeight = 100;								
 				viewStack.addChild(canvas);
+				// mdi
+				canvas.windowManager.snapDistance = 16;
+				canvas.windowManager.tilePadding = 10;
 				
 				// Create a manager for each view.
 				var manager:PodLayoutManager = new PodLayoutManager();
@@ -315,8 +319,8 @@ package org.integratedsemantics.flexibleshare.app
 							index = podLen + unsavedPodCount;
 							unsavedPodCount += 1;
 						}
-						
-						manager.addItemAt(pod, index, StateManager.isPodMaximized(viewId, podId));
+												
+						manager.addItemAt(pod, index, StateManager.isPodMaximized(viewId, podId));						
 					}
 					
 					pod.addEventListener(IndexChangedEvent.CHANGE, onChangePodView);
@@ -328,17 +332,22 @@ package org.integratedsemantics.flexibleshare.app
 			// Delete the saved data.
 			delete podDataDictionary[manager];
 			
-			// Listen for the last pod to complete so the layout from the ContainerWindowManager is done correctly. 
-			pod.addEventListener(FlexEvent.UPDATE_COMPLETE, onCreationCompletePod);
+            // Listen for the last pod to complete so the layout from the ContainerWindowManager is done correctly. 
+            //mdi pod.addEventListener(FlexEvent.UPDATE_COMPLETE, onCreationCompletePod);   
+            var argsArray:Array = new Array();
+            argsArray.push(manager); 
+            callLater(onCreationCompletePod, argsArray);
 		}
 		
 		// Pod has been created so update the respective PodLayoutManager.
-		protected function onCreationCompletePod(e:FlexEvent):void
+		// mdi protected function onCreationCompletePod(e:FlexEvent):void
+        protected function onCreationCompletePod(manager:PodLayoutManager):void
 		{
-			e.currentTarget.removeEventListener(FlexEvent.UPDATE_COMPLETE, onCreationCompletePod);
-			var manager:PodLayoutManager = PodLayoutManager(podHash[e.currentTarget]);
+			//mdi e.currentTarget.removeEventListener(FlexEvent.UPDATE_COMPLETE, onCreationCompletePod);
+			// mdi var manager:PodLayoutManager = PodLayoutManager(podHash[e.currentTarget]);
 			manager.removeNullItems();
-			manager.updateLayout(false);
+			//mdi manager.updateLayout(false);
+			manager.tile();
 		}
 		
 		// Saves the pod content ViewStack state.
@@ -348,6 +357,22 @@ package org.integratedsemantics.flexibleshare.app
 			var viewId:String = PodLayoutManager(podHash[pod]).id;
 			StateManager.setPodViewIndex(viewId, pod.id, e.newIndex);
 		}
+		
+		// mdi
+		protected function tile():void
+		{
+		    var index:int = viewStack.selectedIndex;
+		    var mgr:PodLayoutManager = podLayoutManagers[index];
+		    mgr.tile();  
+		}
+        
+        // mdi
+        protected function cascade():void
+        {
+            var index:int = viewStack.selectedIndex;
+            var mgr:PodLayoutManager = podLayoutManagers[index];
+            mgr.cascade();   
+        }
 				
 	}
 }

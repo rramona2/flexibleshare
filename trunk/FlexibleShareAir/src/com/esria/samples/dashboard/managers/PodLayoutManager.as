@@ -8,17 +8,24 @@ import com.esria.samples.dashboard.events.LayoutChangeEvent;
 import com.esria.samples.dashboard.events.PodStateChangeEvent;
 import com.esria.samples.dashboard.view.DragHighlight;
 import com.esria.samples.dashboard.view.Pod;
+
+import flash.events.Event;
 import flash.events.EventDispatcher;
 import flash.events.MouseEvent;
 import flash.geom.Point;
 import flash.geom.Rectangle;
-import mx.containers.Canvas;
+
+import flexlib.mdi.containers.MDICanvas;
+import flexlib.mdi.events.MDIManagerEvent;
+import flexlib.mdi.events.MDIWindowEvent;
+
+import mx.controls.Alert;
 import mx.core.Application;
 import mx.effects.Move;
 import mx.effects.Parallel;
 import mx.effects.Resize;
 import mx.effects.easing.Exponential;
-import mx.events.DragEvent;
+import mx.events.CloseEvent;
 import mx.events.ResizeEvent;
 
 // Dispatched whenever the layout changes.
@@ -39,7 +46,8 @@ public class PodLayoutManager extends EventDispatcher
 	private var currentDropIndex:Number;					// The index of where to drop the pod while dragging.
 	private var currentDragPodMove:Move;					// The move effect used to transition the pod after it is released from dragging.
 	
-	private var _container:Canvas;							// The container which holds all of the pods.
+	//mdi private var _container:Canvas;							// The container which holds all of the pods.
+    private var _container:MDICanvas;                          // The container which holds all of the pods.
 	
 	private var parallel:Parallel;							// The main effect container.
 	private var maximizeParallel:Parallel;
@@ -52,7 +60,12 @@ public class PodLayoutManager extends EventDispatcher
 	private static const TASKBAR_HORIZONTAL_GAP:Number = 5; // The horizontal gap between minimized pods.
 	private static const TASKBAR_ITEM_WIDTH:Number = 150;	// The preferred minimized pod width if there is available space.
 	private static const TASKBAR_PADDING_TOP:Number = 10;	// The gap between the taskbar and the bottom of the last row of pods.
-	private static const PADDING_RIGHT:Number = 5;			// The right padding within the container when laying out pods.
+	//mdi private static const PADDING_RIGHT:Number = 5;			// The right padding within the container when laying out pods.
+    private static const PADDING_RIGHT:Number = 0;            // The right padding within the container when laying out pods.
+	
+	//mdi
+	private var queuedEvent:MDIManagerEvent;
+	public var isTiled:Boolean = true;
 	
 	// Removes null items from the items array.
 	// This should be called only once after all of the items have been added.
@@ -74,12 +87,14 @@ public class PodLayoutManager extends EventDispatcher
 	}
 	
 	// Sets the canvas which will hold the pods.
-	public function set container(canvas:Canvas):void
+    //mdi public function set container(canvas:Canvas):void
+	public function set container(canvas:MDICanvas):void
 	{
 		_container = canvas;
 	}
 	
-	public function get container():Canvas
+    //mdi public function get container():Canvas
+	public function get container():MDICanvas
 	{
 		return _container;
 	}
@@ -109,19 +124,31 @@ public class PodLayoutManager extends EventDispatcher
 	
 	private function initItem(pod:Pod):void
 	{
-		container.addChild(pod);
+		//mdi container.addChild(pod);
+		container.windowManager.add(pod);
 		
-		pod.addEventListener(DragEvent.DRAG_START, onDragStartPod);
-		pod.addEventListener(DragEvent.DRAG_COMPLETE, onDragCompletePod);
-		pod.addEventListener(PodStateChangeEvent.MAXIMIZE, onMaximizePod);
+
+        /* mdi todo
+        pod.addEventListener(DragEvent.DRAG_START, onDragStartPod);
+        pod.addEventListener(DragEvent.DRAG_COMPLETE, onDragCompletePod);
+        pod.addEventListener(PodStateChangeEvent.MAXIMIZE, onMaximizePod);
 		pod.addEventListener(PodStateChangeEvent.MINIMIZE, onMinimizePod);
 		pod.addEventListener(PodStateChangeEvent.RESTORE, onRestorePod);
+		*/
+		
+		// mdi
+		pod.addEventListener(MDIWindowEvent.DRAG_START, onDragStartPod);
+		pod.addEventListener(MDIWindowEvent.DRAG_END, onDragCompletePod);
 		
 		// Add a highlight for each pod. Used to show a drop target box.
 		var dragHighlight:DragHighlight = new DragHighlight();
 		dragHighlight.visible = false;
 		dragHighlightItems.push(dragHighlight);
 		container.addChild(dragHighlight);
+		
+		// mdi
+        // listen for window close
+        container.windowManager.addEventListener(MDIManagerEvent.WINDOW_CLOSE, confirmWindowClose);		
 	}
 	
 	// Pod has been maximized.
@@ -196,42 +223,52 @@ public class PodLayoutManager extends EventDispatcher
 		dispatchEvent(new LayoutChangeEvent(LayoutChangeEvent.UPDATE));
 	}
 	
-	private function onDragStartPod(e:DragEvent):void
+	
+	//mdi private function onDragStartPod(e:DragEvent):void
+    private function onDragStartPod(e:Event):void
 	{
-		currentDragPod = Pod(e.currentTarget);
-		var len:Number = items.length;
-		for (var i:Number = 0; i < len; i++) // Find the current drop index so we have a start point.
-		{
-			if (Pod(items[i]) == currentDragPod)
-			{
-				currentDropIndex = i;
-				break;
-			}
-		}
-		
-		// Use the stage so we get mouse events outside of the browser window.
-		Application.application.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+	    // mdi: only do drag re-layout if in tile mode
+	    if (isTiled == true)
+	    {
+    		currentDragPod = Pod(e.currentTarget);
+    		var len:Number = items.length;
+    		for (var i:Number = 0; i < len; i++) // Find the current drop index so we have a start point.
+    		{
+    			if (Pod(items[i]) == currentDragPod)
+    			{
+    				currentDropIndex = i;
+    				break;
+    			}
+    		}
+    		
+    		// Use the stage so we get mouse events outside of the browser window.
+    		Application.application.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+	    }
 	}
 	
-	private function onDragCompletePod(e:DragEvent):void
+    //private function onDragCompletePod(e:DragEvent):void
+	private function onDragCompletePod(e:Event):void
 	{
-		Application.application.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
-		
-		if (currentVisibleHighlight != null)
-			currentVisibleHighlight.visible = false;
-		
-		// The x/y will not change if a user clicked on a header without dragging. In that case, we want to toggle the window state.
-		var point:Point = Point(gridPoints[currentDropIndex]);
-		if (point.x != currentDragPod.x || point.y != currentDragPod.y)
-		{
-			currentDragPodMove = new Move(currentDragPod);
-			currentDragPodMove.easingFunction = Exponential.easeOut;
-			currentDragPodMove.xTo = point.x;
-			currentDragPodMove.yTo = point.y;
-			currentDragPodMove.play();
-			
-			dispatchEvent(new LayoutChangeEvent(LayoutChangeEvent.UPDATE));
-		}
+        if (isTiled == true)
+        {
+    		Application.application.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+    		
+    		if (currentVisibleHighlight != null)
+    			currentVisibleHighlight.visible = false;
+    		
+    		// The x/y will not change if a user clicked on a header without dragging. In that case, we want to toggle the window state.
+    		var point:Point = Point(gridPoints[currentDropIndex]);
+    		if (point.x != currentDragPod.x || point.y != currentDragPod.y)
+    		{
+    			currentDragPodMove = new Move(currentDragPod);
+    			currentDragPodMove.easingFunction = Exponential.easeOut;
+    			currentDragPodMove.xTo = point.x;
+    			currentDragPodMove.yTo = point.y;
+    			currentDragPodMove.play();
+    			
+    			dispatchEvent(new LayoutChangeEvent(LayoutChangeEvent.UPDATE));
+    		}
+        }
 	}
 	
 	// Handles the live resorting of pods as one is dragged.
@@ -512,5 +549,46 @@ public class PodLayoutManager extends EventDispatcher
 	{
 		return container.height - TASKBAR_HEIGHT;
 	}
+	
+	// mdi
+    private function confirmWindowClose(event:Event):void
+    {
+        if (event is MDIManagerEvent)
+        {
+            // store a copy of the event in case we want to resume later (user confirms their intention)
+            queuedEvent = event.clone() as MDIManagerEvent;
+
+            // this is the line that prevents the default behavior from executing as usual
+            // because the default handler checks event.isDefaultPrevented()
+            event.preventDefault();
+
+            Alert.show("Close window?", null, 3, null, handleAlertResponse);
+        }
+    }
+
+    // mdi
+    private function handleAlertResponse(event:CloseEvent):void
+    {
+        if(event.detail == mx.controls.Alert.YES)
+        {
+            container.windowManager.executeDefaultBehavior(queuedEvent);
+        }
+    }
+    
+    // mdi
+    public function tile():void
+    {
+        container.windowManager.tile(false, 10);  
+        isTiled = true;
+    }
+    
+    // mdi
+    public function cascade():void
+    {
+        container.windowManager.cascade();    
+        isTiled = false;
+    }
+    	
+	
 }
 }

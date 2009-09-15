@@ -26,7 +26,7 @@ Pod
 	border-thickness: 1px;
 	border-style: solid;
 	border-color: #000000;
-	header-colors: #000000, #000000;
+	header-colors: #666666, #666666;
 	highlight-alphas: .9, 0;
 	corner-radius: 0px;
 	header-height: 22px;
@@ -72,6 +72,12 @@ DragHighlight
 {
     color:           #ffffff;    
     backgroundColor: #333333;
+}
+
+
+MDICanvas
+{
+    background-color: #666666;
 }
 
 /* start from flexspacesair */

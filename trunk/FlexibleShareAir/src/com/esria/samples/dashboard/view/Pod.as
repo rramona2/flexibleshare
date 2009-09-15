@@ -5,12 +5,14 @@
 package com.esria.samples.dashboard.view
 {
 import com.esria.samples.dashboard.events.PodStateChangeEvent;
-import flash.display.Graphics;
+
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
+
+import flexlib.mdi.containers.MDIWindow;
+
 import mx.containers.HBox;
-import mx.containers.Panel;
 import mx.controls.Button;
 import mx.events.DragEvent;
 
@@ -22,7 +24,8 @@ import mx.events.DragEvent;
 [Event(name="maximize", type="com.esria.samples.dashboard.events.PodStateChangeEvent")]
 [Event(name="restore", type="com.esria.samples.dashboard.events.PodStateChangeEvent")]
 
-public class Pod extends Panel
+//mdi public class Pod extends Panel
+public class Pod extends MDIWindow
 {
 	public static const MINIMIZED_HEIGHT:Number = 22;
 	public static const WINDOW_STATE_DEFAULT:Number = -1;
@@ -67,6 +70,7 @@ public class Pod extends Panel
 	{
 		super.createChildren();
 		
+		/* todo
 		if (!headerDivider)
 		{
 			headerDivider = new Sprite();
@@ -100,7 +104,7 @@ public class Pod extends Panel
 			maximizeRestoreButton.styleName = "maximizeRestoreButton";
 			controlsHolder.addChild(maximizeRestoreButton);
 		}
-		
+		*/
 		addEventListeners();
 	}
 	
@@ -108,6 +112,7 @@ public class Pod extends Panel
 	{
 		super.updateDisplayList(unscaledWidth, unscaledHeight);
 		
+		/* todo
 		// Shift the divider one pixel up if minimized so there isn't a gap between the left and right borders.
 		// The bottom border is removed if minimized.
 		var deltaY:Number = windowState == WINDOW_STATE_MINIMIZED ? -1 : 0;
@@ -122,18 +127,21 @@ public class Pod extends Panel
 		controlsHolder.height = titleBar.height;
 		
 		titleTextField.width = titleBar.width - getStyle("paddingLeft") - getStyle("paddingRight");
+		*/
 	}
 	
 	private function addEventListeners():void
 	{
-		titleBar.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDownTitleBar);
-		titleBar.addEventListener(MouseEvent.DOUBLE_CLICK, onClickMaximizeRestoreButton);
-		titleBar.addEventListener(MouseEvent.CLICK, onClickTitleBar);
+		// mdi titleBar.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDownTitleBar);
+		//titleBarOverlay.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDownTitleBar);
 		
-		minimizeButton.addEventListener(MouseEvent.CLICK, onClickMinimizeButton);
-		maximizeRestoreButton.addEventListener(MouseEvent.CLICK, onClickMaximizeRestoreButton);
+		//mdi titleBar.addEventListener(MouseEvent.DOUBLE_CLICK, onClickMaximizeRestoreButton);
+		//mdi titleBar.addEventListener(MouseEvent.CLICK, onClickTitleBar);
 		
-		addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+		// mdi minimizeButton.addEventListener(MouseEvent.CLICK, onClickMinimizeButton);
+		// mdi maximizeRestoreButton.addEventListener(MouseEvent.CLICK, onClickMaximizeRestoreButton);
+		
+		// mdi addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 	}
 	
 	private function onMouseDown(event:Event):void
@@ -149,13 +157,17 @@ public class Pod extends Panel
 		minimize();
 	}
 	
-	public function minimize():void
+	public override function minimize(event:MouseEvent=null):void
 	{
+	    super.minimize(event);
+	    
+	    /* todo
 		// Hide the bottom border if minimized otherwise the headerDivider and bottom border will be staggered. 
 		setStyle("borderSides", "left top right");
 		windowState = WINDOW_STATE_MINIMIZED;
 		height = MINIMIZED_HEIGHT;
 		showControls = false;
+		*/
 	}
 	
 	private function onClickMaximizeRestoreButton(event:MouseEvent=null):void
@@ -176,10 +188,11 @@ public class Pod extends Panel
 		}
 	}
 	
-	public function maximize():void
+	public override function maximize():void
 	{
-		windowState = WINDOW_STATE_MAXIMIZED;
-		
+	    super.maximize();
+	    
+		windowState = WINDOW_STATE_MAXIMIZED;		
 		_maximize = true;
 		_maximizeChanged = true;
 	}
@@ -232,13 +245,15 @@ public class Pod extends Panel
 		stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 		stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 	}
-		
-	public function set showControls(value:Boolean):void
+	
+	/* mdi todo
+	public override function set showControls(value:Boolean):void
 	{
 		_showControls = value;
 		_showControlsChanged = true;
 		invalidateProperties();
 	}
+	*/
 	
 	override protected function commitProperties():void
 	{
@@ -252,7 +267,7 @@ public class Pod extends Panel
 		
 		if (_maximizeChanged)
 		{
-			maximizeRestoreButton.selected = _maximize;
+			// mdi maximizeRestoreButton.selected = _maximize;
 			_maximizeChanged = false;
 		}
 	}
