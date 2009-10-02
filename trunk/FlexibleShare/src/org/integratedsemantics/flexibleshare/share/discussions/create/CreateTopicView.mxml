@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<create:CreateTopicViewBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+    xmlns:create="org.integratedsemantics.flexibleshare.share.discussions.create.*"
+    xmlns:rte="org.integratedsemantics.flexibleshare.share.rte.*"
+    width="800" height="600" title="Create New Topic" styleName="dialog" showCloseButton="true">
+
+    <mx:Style source="create.css"/>
+    
+    <mx:Form styleName="mainArea">
+        <mx:FormItem label= "Title:"  width="400"  styleName="mainArea">
+            <mx:TextInput id="titleTextInput" width="250" text="" styleName="input"/>
+        </mx:FormItem>
+    </mx:Form>
+    
+    <rte:RichTextEdit id="rte" width="703" height="406" styleName="input"/>
+    
+    <mx:Spacer height="20"/>
+                  
+    <mx:HBox width="100%" styleName="buttonArea"> 
+        <mx:Button id="okBtn" label="Save" enabled="{titleTextInput.text != ''}" /> 
+        <mx:Spacer width="20"/>
+        <mx:Button id="cancelBtn" label="Cancel"/>
+    </mx:HBox> 
+    
+</create:CreateTopicViewBase>
