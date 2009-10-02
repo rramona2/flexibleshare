@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<discussions:DiscussionsPodBase
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:discussions="org.integratedsemantics.flexibleshareair.share.discussions.*"
+	width="100%" height="100%"> 
+    
+    <mx:VBox width="100%" height="100%">
+        <mx:HBox>
+            <mx:Button label="New Topic" id="newDiscussionBtn" click="onNewTopic(event)"/>            
+        </mx:HBox>
+        <mx:HBox width="100%" height="100%">
+        	<mx:Tree id="discussionsTree" showRoot="false" dataProvider="{treeRoot}" change="onTreeChange(event)" width="30%" height="100%" />
+        	<mx:VBox width="70%" height="100%">    	    
+                <mx:HTML id="htmlControl" width="100%" height="100%" styleName="input"/>    		
+        		<mx:HBox>
+        			<mx:Button label="Edit" id="editBtn" click="onEdit(event)"/>			
+                    <mx:Button label="Delete" id="deleteBtn" click="onDelete(event)"/>         
+                    <mx:Button label="Tag" id="tagBtn" click="onTag(event)"/>         
+        		</mx:HBox>
+            </mx:VBox>
+        </mx:HBox>                          
+    </mx:VBox>  
+</discussions:DiscussionsPodBase>
+

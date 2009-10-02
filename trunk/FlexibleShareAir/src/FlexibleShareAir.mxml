@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app:FlexibleShareAirAppBase title="FlexibleShare+Air"
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:app="org.integratedsemantics.flexibleshareair.app.*"
+	xmlns:business="org.integratedsemantics.flexspaces.control.delegate.*"
+    xmlns:control="org.integratedsemantics.flexspacesair.control.*"
+    xmlns:login="org.integratedsemantics.flexspaces.view.login.*" 
+	horizontalAlign="left"
+    width="1000" height="700"
+    paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+
+	<mx:Style source="flexibleshareair.css" />
+		
+    <business:Services id="services"/>
+
+    <control:AirAppController id="appController" />
+
+    <mx:VBox id="vbox" width="100%" height="100%">
+        <mx:ApplicationControlBar dock="true" width="100%" height="30" verticalAlign="middle">
+            <mx:Button label="Cascade" click="cascade()" />
+            <mx:Button label="Tile" click="tile()" />
+        </mx:ApplicationControlBar>
+        <mx:ViewStack id="modeViewStack" width="100%" height="100%">
+        
+            <!-- before login, getting config -->
+            <mx:VBox width="100%" height="100%"/>
+    
+    	    <!-- login panel -->
+    	    <mx:Box id="loginPanel" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+    	        <login:LoginView id="loginView" loginPresModel="{flexSpacesAirPresModel.loginPresModel}" creationComplete="onLoginViewCreated(event)"/>
+    	    </mx:Box>	
+    	
+    		<!-- after login, getting info -->
+    		<mx:VBox width="100%" height="100%"/>
+    		                  
+    		<!-- after login, after get info, portal dashboard mode -->
+    		<mx:VBox width="100%" height="100%">
+    			<mx:TabBar
+    				id="tabBar"
+    				itemClick="onItemClickTabBar(event)"
+    				height="35" 
+    				dataProvider="viewStack"
+    				styleName="viewTabs" tabStyleName="viewTab" />
+    			<mx:ViewStack
+    				id="viewStack"
+    				paddingTop="0"
+    				width="100%" height="100%" />	
+    		</mx:VBox>
+    		
+     	</mx:ViewStack> 		
+    </mx:VBox> 		
+</app:FlexibleShareAirAppBase>
