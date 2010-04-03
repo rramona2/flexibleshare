@@ -23,6 +23,9 @@ package org.integratedsemantics.flexibleshareair.flexspaces.all
 
             // note: gets same presmodel that app class gets
             presModel = model.applicationContext.getObject("presModel");
+            
+            // hide logo row
+            presModel.showHeader = false;
         }         
         
     }
