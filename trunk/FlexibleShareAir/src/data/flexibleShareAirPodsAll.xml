@@ -218,36 +218,75 @@ stored in this file rather than a database or separate XML files.
             url="http://www.google.com" />  
 	</view>		
 	
-	<view
-		id="viewGoogleGadgets"
-		label="Google Gadgets">
+    <view
+        id="viewGoogleGadgets"
+        label="Google Gadgets">
+        <!-- Google gadgets can found at http://www.google.com/ig/directory?synd=open -->
+        <!-- To get a URL for a gadget: choose "Add to your webpage", then choose "Get the Code" -->
+        <!-- or can be found from iGoogle http://www.google.com/ig/ choose "Add Stuff", "Embed this gadget" from lower right web master section -->
+        <!-- URL is then in the value of the src attribute of the script tag displayed in in the copy and paste textarea  -->
+        
+        <!-- NOTE: something has changed where the display of google gadgets in air html control displays as an outline box on windows, but fine on mac -->
+        <!-- change due to google changes or air ? -->
+        
         <pod
             id="gadget1"
             type="googlegadget"
-            title="Google Gadget 1"
-            url="http://www.gmodules.com/ig/ifr?url=http://charles447.googlepages.com/google-news.xml&amp;up_subject=Google%20News&amp;up_entries=5&amp;up_summaries=100&amp;up_selectedTab=&amp;synd=open&amp;w=320&amp;h=360&amp;title=Google+News&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js" />  
+            title="Date and Time"
+            url="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/datetime_v2/datetime_v2.xml&amp;up_color=blue&amp;up_dateFormat=wmd&amp;up_firstDay=0&amp;up_clocks=%5B%5B-73.986951%2C40.756054%2C%22New%20York%22%2C0%5D%5D&amp;synd=open&amp;w=320&amp;h=140&amp;title=__MSG_title__&amp;lang=en&amp;country=ALL&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"/>  
         <pod
             id="gadget2"
             type="googlegadget"
-            title="Google Gadget 2"
-            url="http://www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100674619146546250953/wsj.xml&amp;up_entries=5&amp;up_refresh=15&amp;synd=open&amp;w=320&amp;h=300&amp;title=The+Wall+Street+Journal&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js" />  
-	</view>		
-								
-	<view
-		id="viewLiferay"
-		label="Liferay">
+            title="Weather"
+            url="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/builtin_weather.xml&amp;synd=open&amp;w=320&amp;h=200&amp;title=__MSG_weather_title__&amp;lang=en&amp;country=ALL&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"/>  
+    </view>  
+                                
+    <view
+        id="viewLiferay"
+        label="Liferay">
+        
+        <!-- get urls to liferay portlets from editing configuration on portlet in liferay / sharing tab / any website tab -->
+        <!-- Also "Look and Feel" config on the portlet in liferay in first tab, unselecting show borders will  -->
+        <!-- hide liferay's portlet title and border from showing in these pods -->
+        
+        <!-- liferay calendar portlet on test page in liferay  -->
         <pod
             id="liferay1"
             type="liferay"
             title="Liferay"
-            portletUrl="http://localhost:9080/widget/web/test/home/-/8"
-            portalUrl="http://localhost:9080/" />     
+            portletUrl="http://localhost:8080/widget/web/guest/test/-/8"
+            portalUrl="http://localhost:8080/" />     
+        <!-- liferay language portlet on test page in liferay  -->
         <pod
             id="liferay2"
             type="liferay"
             title="Liferay"
-            portletUrl="http://localhost:9080/widget/web/test/home/-/82"
-            portalUrl="http://localhost:9080/" />     
-	</view>
+            portletUrl="http://localhost:8080/widget/web/guest/test/-/82"
+            portalUrl="http://localhost:8080/" />     
+        <!-- liferay web content display portlet on welcome/home page in liferay  -->
+        <pod
+            id="liferay3"
+            type="liferay"
+            title="Liferay"
+            portletUrl="http://localhost:8080/widget/web/guest/home/-/56_INSTANCE_p7sE"
+            portalUrl="http://localhost:8080/" />     
+        <!-- liferay current users portlet on welcome/home page in liferay  -->
+        <pod
+            id="liferay4"
+            type="liferay"
+            title="Liferay"
+            portletUrl="http://localhost:8080/widget/web/guest/home/-/56_INSTANCE_oqG4"
+            portalUrl="http://localhost:8080/" />     
+    </view> 
+
+    <view
+        id="viewLocalFiles"
+        label="Local Files">
+        <pod
+            id="localfiles1"
+            type="localfiles"
+            title="Local Files"
+            />          
+    </view>         
 				
 </views>
