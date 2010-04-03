@@ -201,19 +201,4 @@ stored in this file rather than a database or separate XML files.
             url="http://www.google.com" />  
 	</view>		
 	
-	<view
-		id="viewGoogleGadgets"
-		label="Google Gadgets">
-        <pod
-            id="gadget1"
-            type="googlegadget"
-            title="Google Gadget 1"
-            url="http://www.gmodules.com/ig/ifr?url=http://charles447.googlepages.com/google-news.xml&amp;up_subject=Google%20News&amp;up_entries=5&amp;up_summaries=100&amp;up_selectedTab=&amp;synd=open&amp;w=320&amp;h=360&amp;title=Google+News&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js" />  
-        <pod
-            id="gadget2"
-            type="googlegadget"
-            title="Google Gadget 2"
-            url="http://www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100674619146546250953/wsj.xml&amp;up_entries=5&amp;up_refresh=15&amp;synd=open&amp;w=320&amp;h=300&amp;title=The+Wall+Street+Journal&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js" />  
-	</view>	
-															
 </views>
