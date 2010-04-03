@@ -30,7 +30,7 @@ package org.integratedsemantics.flexibleshare.flexspaces.search
             presModel.showWCM = false;    
             presModel.showShare = false;        
             presModel.showHeader = true; 
-            presModel.searchPanelPresModel.setupSubViews();             
+            //presModel.searchPanelPresModel.setupSubViews();             
         }         
         
     }
