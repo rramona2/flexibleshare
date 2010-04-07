@@ -1,0 +1,71 @@
+==data/flexibleShareAirPods.xml==
+# configures what pods to have
+# see data/flexibleShareAirPodsAll.xml for all possible pods
+# some pods are commented out, can be added back in
+# xml files used for in browser non air FlexibleShare is data/flexibleSharePods.xml 
+(with example of all possible pods in data/flexibleSharePodsAll.xmll)
+# ignore the flexibleDashboard*.xml files
+
+==overall pod xml structure==
+# each view section sets up a tab view
+# can add, change, delete views the default view config in flexibleShareAirPods.xml
+# can choose to have any of the pods in a given view
+# same as esria dashboard
+
+==flexspaces pods==
+# further along than the rest, runs flexspaces views in different portlets/pods
+# doclib, search, tasks (workflow), wcm, flexspaces (pod with all views in one)
+# simplesearch and search are the same functionality currently
+# files from local files pod can be dragged into doclib pod (air only)
+# files from your desktop can be dragged into doclib pod (air only)
+# files from your desktop can be pasted into doclib pod (air only)
+# (Alfresco server needs to be running, integratedsemantics.zip webscripts need to be installed,and FlexSpacesConfig.xml needs to be configured)
+
+==Share pods==
+# Flex UI with Alfresco Share collaboration backend
+# no commenting in blog, discussions, doclib yet
+# calendar doesn't have read of info from share calendar, or add events yet
+(can load a us_holiday.ics, other ics)
+(calendar from Ely Greenfield's quietlyscheming.com)
+# the share pods are protypes
+# the share site for thse pods can be set in pods xml: siteUrlName="s1"
+# (Alfresco server needs to be running, integratedsemantics.zip webscripts need to be installed,and FlexSpacesConfig.xml needs to be configured)
+
+==Charting pods==
+# from esria dashboard, uses quietlyscheming chart animations
+
+==Pentaho pod==
+# uses code from James Ward's port of pentaho dashboard to flex
+# built version uses sample data, code that can call pentaho server is commented out
+
+==JasperReports pod==
+# displays reports/WebappReport.jrpxml
+# uses code from JasperReports flash viewer, changed to read from file instead of server
+
+BlazedDS pods
+# There are two pods that run samples from BlazeDS
+# BlazeDS pods need blazeds samples.war in your tomcat webapps dir
+# They also need the the BlazeDS sampledb/startdb.bat running before starting tomcat
+
+HTML pods
+# works better in AIR since can use air html webkit control
+# in browser version uses iframe, should stick to using tile mode and don't use cascade button
+# in pod xml set url to url of web page
+
+Google Gadget pods
+  # NOTE: Something has changed where gadget urls from google gmodules.com only display as outlines currently
+  # maybe it would work if you have your own gadget server
+
+Liferay pods (AIR only) (Each can display a given portlet from a running Liferay server)
+1. the url of liferay can be set with portalUrl in the pod xml
+2. the url of a liferay portlet is set with the portletUrl pod xml. To get the liferay widget
+url for a given portlet, choose edit configuration on portlet in liferay / sharing tab / any website tab
+3. Also "Look and Feel" config on the portlet in liferay in first tab, unselecting show borders will  
+hide liferay's portlet title and border from showing in these pods
+4. to run liferay in a separate tomcat at the same time as alfresco in another tomcat,
+I usually change in the liferay conf/server.xml all the ports 80xx to 90xx
+
+Local files pod (AIR only)
+1. displays a tree and list of local files
+2. useful for dragging files into other pods with native air drag/drip support 
+(such as the doclib pods in flexibleshareair)
