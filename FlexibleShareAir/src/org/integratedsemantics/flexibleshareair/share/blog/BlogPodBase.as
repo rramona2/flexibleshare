@@ -8,7 +8,6 @@ package org.integratedsemantics.flexibleshareair.share.blog
     import flash.net.URLLoader;
     import flash.net.URLRequest;
     
-    import mx.controls.Button;
     import mx.controls.HTML;
     import mx.controls.Tree;
     import mx.events.FlexEvent;
@@ -21,11 +20,12 @@ package org.integratedsemantics.flexibleshareair.share.blog
     import org.integratedsemantics.flexibleshare.share.blog.BlogPost;
     import org.integratedsemantics.flexibleshareair.share.blog.create.CreateBlogPostView;
     import org.integratedsemantics.flexibleshareair.share.blog.edit.EditBlogPostView;
-    
     import org.integratedsemantics.flexspaces.control.event.ui.DeleteNodesUIEvent;
     import org.integratedsemantics.flexspaces.control.event.ui.TagsCategoriesUIEvent;
     import org.integratedsemantics.flexspaces.model.AppModelLocator;
     import org.integratedsemantics.flexspaces.model.tree.TreeNode;
+    
+    import spark.components.Button;
 
     
     public class BlogPodBase extends PodContentBase
