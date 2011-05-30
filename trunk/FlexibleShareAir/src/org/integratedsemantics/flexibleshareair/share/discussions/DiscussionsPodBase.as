@@ -8,7 +8,6 @@ package org.integratedsemantics.flexibleshareair.share.discussions
     import flash.net.URLLoader;
     import flash.net.URLRequest;
     
-    import mx.controls.Button;
     import mx.controls.HTML;
     import mx.controls.Tree;
     import mx.events.FlexEvent;
@@ -21,11 +20,12 @@ package org.integratedsemantics.flexibleshareair.share.discussions
     import org.integratedsemantics.flexibleshare.share.discussions.Topic;
     import org.integratedsemantics.flexibleshareair.share.discussions.create.CreateTopicView;
     import org.integratedsemantics.flexibleshareair.share.discussions.edit.EditTopicView;
-    
     import org.integratedsemantics.flexspaces.control.event.ui.DeleteNodesUIEvent;
     import org.integratedsemantics.flexspaces.control.event.ui.TagsCategoriesUIEvent;
     import org.integratedsemantics.flexspaces.model.AppModelLocator;
     import org.integratedsemantics.flexspaces.model.tree.TreeNode;
+    
+    import spark.components.Button;
 
 
     public class DiscussionsPodBase extends PodContentBase

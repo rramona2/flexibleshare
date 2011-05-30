@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<actionScriptProperties mainApplicationPath="FlexibleShareAir.mxml" version="3">
-  <compiler additionalCompilerArguments="-source-path+=locale/{locale} -locale=en_US -allow-source-path-overlap=true" copyDependentFiles="true" enableModuleDebug="true" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="false" htmlPlayerVersion="9.0.28" htmlPlayerVersionCheck="true" outputFolderPath="bin-debug" sourceFolderPath="src" strict="true" useApolloConfig="true" verifyDigests="true" warn="true">
+<actionScriptProperties analytics="false" mainApplicationPath="FlexibleShareAir.mxml" projectUUID="7ee61568-e4d1-4aa8-8f64-4c62e5f2b1ff" version="10">
+  <compiler additionalCompilerArguments="-source-path+=locale/{locale} -locale=en_US -allow-source-path-overlap=true" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="false" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="true" useDebugRSLSwfs="true" verifyDigests="true" warn="true">
     <compilerSourcePath>
       <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/FlexSpaces/src"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/FlexSpacesAir/src"/>
@@ -8,16 +8,59 @@
       <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/FlexibleDashboardAir/src"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="${DOCUMENTS}/FlexibleShare/src"/>
     </compilerSourcePath>
-    <libraryPath defaultLinkType="1">
+    <libraryPath defaultLinkType="3">
       <libraryPathEntry kind="4" path=""/>
       <libraryPathEntry kind="1" linkType="1" path="${DOCUMENTS}/FlexSpaces/lib"/>
       <libraryPathEntry kind="1" linkType="1" path="${DOCUMENTS}/FlexibleDashboard/lib"/>
+      <libraryPathEntry kind="3" linkType="1" path="/flexibledashboard-jasperreports-viewer-noserver/bin/flexibledashboard-jasperreports-viewer-noserver.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="/flexibledashboard-olaplib/bin/flexibledashboard-olaplib.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="FlexibleShareAir.mxml"/>
+    <application path="FlexibleShareAir.mxml">
+      <airExcludes/>
+    </application>
   </applications>
-  <modules/>
+  <modules>
+    <module application="src/FlexibleShareAir.mxml" destPath="com/esria/samples/dashboard/view/ChartContent.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/com/esria/samples/dashboard/view/ChartContent.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="com/esria/samples/dashboard/view/FormContent.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/com/esria/samples/dashboard/view/FormContent.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="com/esria/samples/dashboard/view/ListContent.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/com/esria/samples/dashboard/view/ListContent.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="com/esria/samples/dashboard/view/PieChartContent.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/com/esria/samples/dashboard/view/PieChartContent.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/blazeds/BlazeDsPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/blazeds/BlazeDsPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/calendar/CalendarPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/calendar/CalendarPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/flex/FlexAppPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/flex/FlexAppPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/grid/ChartGridPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/grid/ChartGridPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/grid/GridPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/grid/GridPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/jasperreports/ReportPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/jasperreports/ReportPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/olap/OlapGridPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/olap/OlapGridPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboard/pentaho/PentahoPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboard-src/org/integratedsemantics/flexibledashboard/pentaho/PentahoPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboardair/birt/BirtReportViewerAirPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboardAir-src/org/integratedsemantics/flexibledashboardair/birt/BirtReportViewerAirPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboardair/browser/BrowserPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboardAir-src/org/integratedsemantics/flexibledashboardair/browser/BrowserPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboardair/html/GoogleGadgetPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboardAir-src/org/integratedsemantics/flexibledashboardair/html/GoogleGadgetPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboardair/html/HtmlPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboardAir-src/org/integratedsemantics/flexibledashboardair/html/HtmlPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboardair/liferay/LiferayHtmlPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboardAir-src/org/integratedsemantics/flexibledashboardair/liferay/LiferayHtmlPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibledashboardair/localfiles/LocalFilesPod.swf" optimize="true" sourcePath="[source path] FlexibleDashboardAir-src/org/integratedsemantics/flexibledashboardair/localfiles/LocalFilesPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/flexspaces/all/FlexSpacesAirPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/flexspaces/all/FlexSpacesAirPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/flexspaces/doclib/DocLibPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/flexspaces/doclib/DocLibPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/flexspaces/search/SearchPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/flexspaces/search/SearchPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/flexspaces/search/SimpleSearchPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/flexspaces/search/SimpleSearchPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/flexspaces/tasks/TasksPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/flexspaces/tasks/TasksPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/flexspaces/wcm/WcmPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/flexspaces/wcm/WcmPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/share/blog/BlogPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/share/blog/BlogPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/share/dashboard/ShareHtmlPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/share/dashboard/ShareHtmlPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/share/discussions/DiscussionsPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/share/discussions/DiscussionsPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/share/doclib/ShareDocLibPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/share/doclib/ShareDocLibPod.mxml"/>
+    <module application="src/FlexibleShareAir.mxml" destPath="org/integratedsemantics/flexibleshareair/share/wiki/WikiPod.swf" optimize="true" sourcePath="src/org/integratedsemantics/flexibleshareair/share/wiki/WikiPod.mxml"/>
+  </modules>
   <buildCSSFiles/>
+  <flashCatalyst validateFlashCatalystCompatibility="false"/>
+  <buildTargets>
+    <buildTarget buildTargetName="default">
+      <airSettings airCertificatePath="C:/Users/sreiner/Desktop/air cert/FlexSpacesAirCert1.p12" airTimestamp="true" version="1">
+        <airExcludes/>
+      </airSettings>
+      <actionScriptSettings version="1"/>
+    </buildTarget>
+  </buildTargets>
 </actionScriptProperties>

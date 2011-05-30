@@ -12,7 +12,6 @@ package org.integratedsemantics.flexibleshareair.share.blog.edit
     import org.integratedsemantics.flexibleshare.share.blog.BlogPost;
     import org.integratedsemantics.flexspaces.framework.presmodel.DialogViewBase;
 
-
     /**
      * Base class for edit blog post
      * 

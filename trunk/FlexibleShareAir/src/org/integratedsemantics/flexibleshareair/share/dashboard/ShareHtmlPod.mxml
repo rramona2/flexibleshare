@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <PodContentBase
-	xmlns:mx="http://www.adobe.com/2006/mxml"
+    xmlns:fx="http://ns.adobe.com/mxml/2009" 
+    xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:mx="library://ns.adobe.com/flex/mx"   
 	xmlns="com.esria.samples.dashboard.view.*"
 	width="100%" height="100%"		
 	creationComplete="init();"> 
     
-    <mx:Script>
+    <fx:Script>
         <![CDATA[
         import org.integratedsemantics.flexspaces.model.AppModelLocator;
 
 		private function init():void
 		{
 			var model:AppModelLocator = AppModelLocator.getInstance();
-            var urlBegin:String;
 			
-            urlBegin = model.ecmServerConfig.protocol + "://" + model.ecmServerConfig.domain + ":" + model.ecmServerConfig.port + "/share/";
-            html.location = urlBegin + "login?username=" + model.userInfo.loginUserName + "&password=" + model.userInfo.loginPassword + "&success=" + urlBegin + "&failure=" + urlBegin;			
-
+            var urlBegin:String = model.ecmServerConfig.shareUrl;
+            if (model.ecmServerConfig.loggedInToShare == false)
+            {
+                var loginUrl:String = urlBegin + "/page/dologin?username=" + model.userInfo.loginUserName + "&password=" + model.userInfo.loginPassword; 
+                loginUrl += "&success=" + urlBegin + "/page/site-index" + "&failure=" + urlBegin + "/page/type/login?error=true";
+                html.location = loginUrl;
+            }
+            else
+            {
+                html.location = urlBegin;
+            }            
+            
 			html.visible=true;
 		}
         
         ]]>
-    </mx:Script>                              
+    </fx:Script>                              
            
 	<mx:HTML id="html" width="100%" height="100%"/>
 

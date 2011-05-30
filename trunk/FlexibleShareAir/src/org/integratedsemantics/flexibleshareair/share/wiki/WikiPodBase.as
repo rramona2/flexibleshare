@@ -8,7 +8,6 @@ package org.integratedsemantics.flexibleshareair.share.wiki
     import flash.net.URLLoader;
     import flash.net.URLRequest;
     
-    import mx.controls.Button;
     import mx.controls.HTML;
     import mx.controls.Tree;
     import mx.events.FlexEvent;
@@ -17,14 +16,16 @@ package org.integratedsemantics.flexibleshareair.share.wiki
     import mx.rpc.events.FaultEvent;
     import mx.rpc.events.ResultEvent;
     import mx.rpc.http.HTTPService;
-
-    import org.integratedsemantics.flexibleshare.share.wiki.WikiPage;    
+    
+    import org.integratedsemantics.flexibleshare.share.wiki.WikiPage;
     import org.integratedsemantics.flexibleshareair.share.wiki.create.CreateWikiPageView;
     import org.integratedsemantics.flexibleshareair.share.wiki.edit.EditWikiPageView;
     import org.integratedsemantics.flexspaces.control.event.ui.DeleteNodesUIEvent;
     import org.integratedsemantics.flexspaces.control.event.ui.TagsCategoriesUIEvent;
     import org.integratedsemantics.flexspaces.model.AppModelLocator;
     import org.integratedsemantics.flexspaces.model.tree.TreeNode;
+    
+    import spark.components.Button;
 
 
     public class WikiPodBase extends PodContentBase
