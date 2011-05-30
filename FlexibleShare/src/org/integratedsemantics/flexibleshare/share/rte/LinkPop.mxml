@@ -2,12 +2,15 @@
 <!-- A TitleWindow that displays the X close button.
         Clicking the close button only generates a CloseEvent event, so it
         must handle the event to close the control. -->
-<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+<mx:TitleWindow 
+        xmlns:fx="http://ns.adobe.com/mxml/2009" 
+        xmlns:s="library://ns.adobe.com/flex/spark" 
+        xmlns:mx="library://ns.adobe.com/flex/mx"   
 		borderAlpha="1.0" title="Insert Link" showCloseButton="true" close="closeDialog();" 
 		verticalScrollPolicy="off" horizontalScrollPolicy="off"
-		creationComplete = "initialFocus();"
-			>
-    <mx:Script>
+		creationComplete = "initialFocus();">
+    
+    <fx:Script>
         <![CDATA[
             import mx.controls.TextArea;
             import mx.managers.PopUpManager;
@@ -62,13 +65,14 @@
             }
 
         ]]>
-    </mx:Script>
+    </fx:Script>
 
-    <mx:HBox>
-    	<mx:Label text="URL:"/>
+    <s:HGroup>
+    	<s:Label text="URL:"/>
     	<mx:TextInput id="userLink" text="http://"/>
-    </mx:HBox>
+    </s:HGroup>
     <mx:Canvas id="submitCanv" width="100%" horizontalScrollPolicy="off">
-    	<mx:Button x="{submitCanv.width - 88}" label="Insert Link" click="insertLink();"/>
+    	<s:Button x="{submitCanv.width - 88}" label="Insert Link" click="insertLink();"/>
     </mx:Canvas>
+    
 </mx:TitleWindow>

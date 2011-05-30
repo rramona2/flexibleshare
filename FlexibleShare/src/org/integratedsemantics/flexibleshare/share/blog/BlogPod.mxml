@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <blog:BlogPodBase
-	xmlns:mx="http://www.adobe.com/2006/mxml"
-	xmlns:blog="org.integratedsemantics.flexibleshare.share.blog.*"
+    xmlns:fx="http://ns.adobe.com/mxml/2009" 
+    xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:mx="library://ns.adobe.com/flex/mx"   
+    xmlns:blog="org.integratedsemantics.flexibleshare.share.blog.*"
     xmlns:rte="org.integratedsemantics.flexibleshare.share.rte.*"
+    horizontalScrollPolicy="off" verticalScrollPolicy="off"
 	width="100%" height="100%"> 
     
-    <mx:VBox width="100%" height="100%">
-        <mx:HBox>
-            <mx:Button label="New Post" id="newPostBtn" click="onNewPost(event)"/>            
-            <mx:Button label="Configure External Blog" id="configBlog" click="onConfigureExternalBlog(event)" enabled="false"/>         
-        </mx:HBox>
-        <mx:HBox width="100%" height="100%">
+    <s:VGroup width="100%" height="100%">
+        <s:HGroup>
+            <s:Button label="New Post" id="newPostBtn" click="onNewPost(event)"/>            
+            <s:Button label="Configure External Blog" id="configBlog" click="onConfigureExternalBlog(event)" enabled="false"/>         
+        </s:HGroup>
+        <s:HGroup width="100%" height="100%">
         	<mx:Tree id="blogTree" showRoot="false" dataProvider="{treeRoot}" change="onTreeChange(event)" width="30%" height="100%" />
-        	<mx:VBox width="70%" height="100%">    	    
+        	<s:VGroup width="70%" height="100%">    	    
 			    <rte:RichTextEdit id="rte" width="100%" height="100%" styleName="input"/>
-        		<mx:HBox>
-        			<mx:Button label="Edit" id="editBtn" click="onEdit(event)"/>			
-                    <mx:Button label="Delete" id="deleteBtn" click="onDelete(event)"/>         
-                    <mx:Button label="Tag" id="tagBtn" click="onTag(event)"/>         
-        		</mx:HBox>
-            </mx:VBox>
-        </mx:HBox>                          
-    </mx:VBox>  
+        		<s:HGroup>
+        			<s:Button label="Edit" id="editBtn" click="onEdit(event)"/>			
+                    <s:Button label="Delete" id="deleteBtn" click="onDelete(event)"/>         
+                    <s:Button label="Tag" id="tagBtn" click="onTag(event)"/>         
+        		</s:HGroup>
+            </s:VGroup>
+        </s:HGroup>                          
+    </s:VGroup>  
 </blog:BlogPodBase>
 

@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<create:CreateBlogPostViewBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+<create:CreateBlogPostViewBase 
+    xmlns:fx="http://ns.adobe.com/mxml/2009" 
+    xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:mx="library://ns.adobe.com/flex/mx"	
     xmlns:create="org.integratedsemantics.flexibleshare.share.blog.create.*"
     xmlns:rte="org.integratedsemantics.flexibleshare.share.rte.*"
-    width="800" height="600" title="Create Blog Post" styleName="dialog" showCloseButton="true">
+    width="800" height="600" title="Create Blog Post" styleName="dialog">
 
-    <mx:Style source="create.css"/>
+    <fx:Style source="create.css"/>
     
-    <mx:Form styleName="mainArea">
-        <mx:FormItem label= "Title:"  width="400"  styleName="mainArea">
-            <mx:TextInput id="titleTextInput" width="250" text="" styleName="input"/>
-        </mx:FormItem>
-    </mx:Form>
-    
-    <rte:RichTextEdit id="rte" width="703" height="406" styleName="input"/>
-    
-    <mx:Spacer height="20"/>
-                  
-    <mx:HBox width="100%" styleName="buttonArea"> 
-        <mx:Button id="okBtn" label="Save as Draft" enabled="{titleTextInput.text != ''}" /> 
-        <mx:Spacer width="20"/>
-        <mx:Button id="publishBtn" label="Publish Internally" enabled="false"/> 
-        <mx:Spacer width="20"/>
-        <mx:Button id="publishExternallyBtn" label="Update Internally and Publish Externally" enabled="false"/> 
-        <mx:Spacer width="20"/>
-        <mx:Button id="cancelBtn" label="Cancel"/>
-    </mx:HBox> 
-    
+    <s:VGroup horizontalAlign="left" verticalAlign="top" width="100%" height="100%" styleName="mainArea"
+              paddingLeft="20" paddingTop="20" paddingRight="20" paddingBottom="20">
+            
+        <mx:Form styleName="mainArea">
+            <mx:FormItem label= "Title:"  width="400"  styleName="mainArea">
+                <mx:TextInput id="titleTextInput" width="250" text="" styleName="input"/>
+            </mx:FormItem>
+        </mx:Form>
+        
+        <rte:RichTextEdit id="rte" width="703" height="406" styleName="input"/>
+        
+        <mx:Spacer height="20"/>
+                      
+        <s:HGroup width="100%" styleName="buttonArea"> 
+            <s:Button id="okBtn" label="Save as Draft" enabled="{titleTextInput.text != ''}" /> 
+            <mx:Spacer width="20"/>
+            <s:Button id="publishBtn" label="Publish Internally" enabled="false"/> 
+            <mx:Spacer width="20"/>
+            <s:Button id="publishExternallyBtn" label="Update Internally and Publish Externally" enabled="false"/> 
+            <mx:Spacer width="20"/>
+            <s:Button id="cancelBtn" label="Cancel"/>
+        </s:HGroup> 
+
+    </s:VGroup>
+        
 </create:CreateBlogPostViewBase>
