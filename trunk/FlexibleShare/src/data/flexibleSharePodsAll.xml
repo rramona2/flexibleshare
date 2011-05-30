@@ -26,186 +26,292 @@ stored in this file rather than a database or separate XML files.
 				dataFields - For form pods, used to assign the data fields to the form fields.
 							 The second field should always be a date expressed in milliseconds since the epoch.
 	-->
-	<view
-		id="viewFlexspaces"
-		label="FlexSpaces">
-		<pod
-			id="flexspaces1"
-			type="doclib"
-			title="DocLib"
-			/>
-		<pod
-			id="flexspaces2"
-			type="search"
-			title="Search"
-			/>
+	
+    <view
+        id="viewFlexspaces"
+        label="FlexSpaces">
+        <pod
+            id="flexspaces1"
+            type="doclib"
+            title="DocLib"
+            module="org/integratedsemantics/flexibleshare/flexspaces/doclib/DocLibPod.swf"
+            />
         <!--pod
+            id="flexspaces2"
+            type="search"
+            title="Search"
+            module="org/integratedsemantics/flexibleshare/flexspaces/search/SearchPod.swf"         
+            /-->
+        <pod
             id="flexspaces3"
             type="simplesearch"
             title="Search"
+            module="org/integratedsemantics/flexibleshare/flexspaces/search/SimpleSearchPod.swf"         
+            />
+        <pod
+            id="flexspaces4"
+            type="tasks"
+            title="Tasks"
+            module="org/integratedsemantics/flexibleshare/flexspaces/tasks/TasksPod.swf"         
+            />
+        <!--pod
+            id="flexspaces5"
+            type="wcm"
+            title="WCM"
+            module="org/integratedsemantics/flexibleshare/flexspaces/wcm/WcmPod.swf"         
             /-->
-		<pod
-			id="flexspaces4"
-			type="tasks"
-			title="Tasks"
-			/>
-		<pod
-			id="flexspaces5"
-			type="wcm"
-			title="WCM"
-			/>
-		<!--pod
-			id="flexspaces6"
-			type="flexspaces"
-			title="All FlexSpaces"
-			/-->
-	</view>
-	<view
-		id="viewShare"
-		label="Share">
-		<pod
-			id="share1"
-			type="calendar"
-			title="Calendar"
+        <pod
+            id="flexspaces6"
+            type="flexspaces"
+            title="All FlexSpaces"
+            module="org/integratedsemantics/flexibleshare/flexspaces/all/FlexSpacesPod.swf"         
+            />
+    </view>
+        
+    <view
+        id="viewShare"
+        label="Share">
+        <pod
+            id="share1"
+            type="calendar"
+            title="Calendar"
+            module="org/integratedsemantics/flexibledashboard/calendar/CalendarPod.swf"
             siteUrlName="s1"
-			/>
-		<pod
-			id="share2"
-			type="blog"
-			title="Blog"
+            />
+        <pod
+            id="share2"
+            type="blog"
+            title="Blog"
+            module="org/integratedsemantics/flexibleshare/share/blog/BlogPod.swf"         
             siteUrlName="s1"
-			/>
-		<pod
-			id="share3"
-			type="wiki"
-			title="Wiki"
+            />
+        <pod
+            id="share3"
+            type="wiki"
+            title="Wiki"
+            module="org/integratedsemantics/flexibleshare/share/wiki/WikiPod.swf"         
             siteUrlName="s1"
-			/>
-		<pod
-			id="share4"
-			type="discussions"
-			title="Discussions"
+            />
+        <pod
+            id="share4"
+            type="discussions"
+            title="Discussions"
+            module="org/integratedsemantics/flexibleshare/share/discussions/DiscussionsPod.swf"         
             siteUrlName="s1"
-			/>
-		<pod
-			id="share5"
-			type="sharedoclib"
-			title="Doc Lib"
+            />
+        <pod
+            id="share5"
+            type="sharedoclib"
+            title="Doc Lib"
+            module="org/integratedsemantics/flexibleshare/share/doclib/ShareDocLibPod.swf"         
             siteUrlName="s1"
-			/>
-	</view>	
+            />
+    </view>   
 
-	<view
-		id="viewCharts"
-		label="Charts">
-		<pod
-			id="charts1"
-			type="chart"
-			title="Yearly Revenue"
-			dataSource="data/revenue.xml"
-			selectedViewIndex="1"
-			valueField="value"
-			categoryField="month"
-			dataTipUnitLabel="$*M"
-			dataTipLabelField="month"/>
-		<pod
-			id="charts2"
-			type="chart"
-			title="Yearly Profit"
-			dataSource="data/profit.xml"
-			valueField="value"
-			categoryField="month"
-			dataTipUnitLabel="$*M"
-			dataTipLabelField="month"/>
-		<pod
-			id="charts3"
-			type="chart"
-			title="Projected Revenue"
-			dataSource="data/projected_revenue.xml"
-			valueField="value"
-			categoryField="month"
-			dataTipUnitLabel="$*M"
-			dataTipLabelField="month"/>
-		<pod
-			id="charts4"
-			type="pieChart"
-			title="Revenue by Region"
-			dataSource="data/revenue_by_region.xml"
-			valueField="value"
-			categoryField="region"
-			dataTipUnitLabel="$*M"
-			dataTipLabelField="region"/>
-		<!-- pod
-			id="charts5"
-			type="form"
-			title="Sales Pipeline"
-			dataSource="data/pipeline.xml"
-			selectedViewIndex="1"
-			labels="Name,Date,Description"
-			dataFields="name,date,description" /-->
-		<!--pod
-			id="charts6"
-			type="form"
-			title="To Do"
-			dataSource="data/tasks.xml"
-			labels="Name,Date,Description"
-			dataFields="name,date,description" /-->
-		<!--pod
-			id="charts7"
-			type="list"
-			title="Company News"
-			dataSource="data/news.xml" /-->
-	</view>
-	<view
-		id="viewJasperReports"
-		label="JasperReports">
-		<pod
-			id="jasperreport1"
-			type="report"
-			title="JasperReports"
-			/>
-	</view>	
-	<view
-		id="viewPentaho"
-		label="Pentaho">
-		<pod
-			id="pentaho1"
-			type="pentaho"
-			title="Pentaho"
-			/>
-	</view>	
-	
-	<!--  BlazeDS pods need blazeds samples.war in your tomcat webapps dir -->
-	<!--  and need the BlazeDS sampledb/startdb.bat running -->	
-	<view
-		id="viewBlazeDS"
-		label="BlazeDS">
+   <!-- to use these grid pods need to add channelset config from flexibledashboard spring-actionacript/application-context.xml into flexspacesconfig.xml -->
+   <view
+      id="viewGrid"
+      label="Grids">
+        <pod
+            id="grid1"
+            type="grid"
+            title="Data Grid with gridpod-context1.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
+            contextFile="spring-actionscript/gridpod-context1.xml"
+            />  
+        <pod
+            id="grid2"
+            type="grid"
+            title="Data Grid with gridpod-context2.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
+            contextFile="spring-actionscript/gridpod-context2.xml"
+            />  
+        <pod
+            id="grid3"
+            type="grid"
+            title="Data Grid with gridpod-context3.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
+            contextFile="spring-actionscript/gridpod-context3.xml"
+            />  
+        <pod
+            id="chartgrid1"
+            type="chartgrid"
+            title="Chart + Data Grid with chartgridpod-context.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/ChartGridPod.swf"
+            valueField="price"
+            categoryField="name"            
+            contextFile="spring-actionscript/chartgridpod-context.xml"        
+            />  
+   </view> 
+   
+   <view
+      id="viewCharts"
+      label="Charts">
+      <pod
+         id="charts1"
+         type="chart"
+         title="Yearly Revenue"
+         module="com/esria/samples/dashboard/view/ChartContent.swf"
+         dataSource="data/revenue.xml"
+         selectedViewIndex="1"
+         valueField="value"
+         categoryField="month"
+         dataTipUnitLabel="$*M"
+         dataTipLabelField="month"/>
+      <pod
+         id="charts2"
+         type="chart"
+         title="Yearly Profit"
+         module="com/esria/samples/dashboard/view/ChartContent.swf"
+         dataSource="data/profit.xml"
+         valueField="value"
+         categoryField="month"
+         dataTipUnitLabel="$*M"
+         dataTipLabelField="month"/>
+      <pod
+         id="charts3"
+         type="chart"
+         title="Projected Revenue"
+         module="com/esria/samples/dashboard/view/ChartContent.swf"
+         dataSource="data/projected_revenue.xml"
+         valueField="value"
+         categoryField="month"
+         dataTipUnitLabel="$*M"
+         dataTipLabelField="month"/>
+      <pod
+         id="charts4"
+         type="pieChart"
+         title="Revenue by Region"
+         module="com/esria/samples/dashboard/view/PieChartContent.swf"
+         dataSource="data/revenue_by_region.xml"
+         valueField="value"
+         categoryField="region"
+         dataTipUnitLabel="$*M"
+         dataTipLabelField="region"/>
+      <!-- pod
+         id="charts5"
+         type="form"
+         title="Sales Pipeline"
+         module="com/esria/samples/dashboard/view/FormContent.swf"
+         dataSource="data/pipeline.xml"
+         selectedViewIndex="1"
+         labels="Name,Date,Description"
+         dataFields="name,date,description" /-->
+      <!--pod
+         id="charts6"
+         type="form"
+         title="To Do"
+         module="com/esria/samples/dashboard/view/FormContent.swf"
+         dataSource="data/tasks.xml"
+         labels="Name,Date,Description"
+         dataFields="name,date,description" /-->
+      <!--pod
+         id="charts7"
+         type="list"
+         title="Company News"
+         module="com/esria/samples/dashboard/view/ListContent.swf"
+         dataSource="data/news.xml" /-->
+   </view>
+   <view
+      id="viewJasperReports"
+      label="JasperReports">
+      <pod
+         id="jasperreport1"
+         type="report"
+         title="JasperReports"
+         module="org/integratedsemantics/flexibledashboard/jasperreports/ReportPod.swf"
+         reporturl="reports/WebappReport.jrpxml"
+         />
+   </view>  
+   <view
+      id="viewPentaho"
+      label="Pentaho Charts">
+      <pod
+         id="pentaho1"
+         type="pentaho"
+         title="Pentaho"
+         module="org/integratedsemantics/flexibledashboard/pentaho/PentahoPod.swf"
+         />
+   </view>  
+   
+    <!--  BlazeDS pods need blazeds samples.war in your tomcat webapps dir -->
+    <!--  and need the BlazeDS sampledb/startdb.bat running --> 
+    <view
+        id="viewBlazeDS"
+        label="BlazeDS">
+        <!-- simple remote object use, also see GridPod for more flexible data source use with blazeds -->
         <pod
             id="blazeds1"
-            type="flexApp"
-            title="BlazeDS test drive web service external SWF"
-            swfUrl="http://localhost:8400/samples/testdrive-webservice/main.swf" />  
-        <pod
-            id="blazeds2"
             type="blazeds"
             title="Built-in pod using remoting with BlazeDS test drive"
+            module="org/integratedsemantics/flexibledashboard/blazeds/BlazeDsPod.swf"
             url="http://localhost:8400/samples/" />  
-	</view>	
-	
-	<!--  non-air html (iframe) has issues currently: cascade mode stays on top, -->
-	<!--  and iframe pod not hiding after tab switch away from page with iframe pod -->	
-	<view
-		id="viewHTML"
-		label="HTML">
+    </view> 
+   
+   <view
+      id="viewCalendar"
+      label="Calendar">
+      <pod
+         id="calendar1"
+         type="calendar"
+         title="Calendar"
+         module="org/integratedsemantics/flexibledashboard/calendar/CalendarPod.swf"
+         />       
+   </view>
+
+   <!--  non-air html (iframe) has issues currently: cascade mode - can't move pod to front -->
+   <!--  tile mode - snap in place portal style drag/drop doesn't kick in --> 
+   <view
+      id="viewHTML"
+      label="HTML">
         <pod
             id="html1"
             type="html"
             title="Google"
+            module="org/integratedsemantics/flexibledashboard/html/IFramePod.swf"
             url="http://www.google.com" />  
         <pod
             id="html2"
             type="html"
             title="Yahoo"
+            module="org/integratedsemantics/flexibledashboard/html/IFramePod.swf"
             url="http://www.yahoo.com" />  
-	</view>		
+   </view>     
+   
+    <view
+        id="viewOlap"
+        label="OLAP">
+        <pod
+            id="olap1"
+            type="olap-grid"
+            title="OLAP Mondrian"
+            module="org/integratedsemantics/flexibledashboard/olap/OlapGridPod.swf"
+            url="http://localhost:8400/mondrian-embedded/xmla"
+            xmlaDataSource="Provider=Mondrian;DataSource=MondrianFoodMart;"
+            catalog="FoodMart"
+            />
+        <!--pod
+            id="olap2"
+            type="olap-grid"
+            title="OLAP Pentaho"
+            module="org/integratedsemantics/flexibledashboard/olap/OlapGridPod.swf"
+            url="http://localhost:8080/pentaho/Xmla?userid=joe&amp;password=password"
+            xmlaDataSource="Provider=Mondrian;DataSource=Pentaho"
+            catalog="SteelWheels"
+            /-->
+    </view>   
+    
+  <view
+      id="viewBIRT"
+      label="BIRT">
+        <pod
+            id="birt1"
+            type="birt-report"
+            title="BIRT Report"
+            module="org/integratedsemantics/flexibledashboard/birt/BirtReportViewerPod.swf"
+            url="http://localhost:8400/birt-viewer/"
+            report="SalesInvoice.rptdesign"
+            />  
+   </view>     
+
 </views>

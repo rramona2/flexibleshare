@@ -17,14 +17,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>[source path] FlexibleDashboard-src</name>
-			<type>2</type>
-			<locationURI>DOCUMENTS/FlexibleDashboard/src</locationURI>
-		</link>
-		<link>
 			<name>[source path] FlexSpaces-src</name>
 			<type>2</type>
 			<locationURI>DOCUMENTS/FlexSpaces/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] FlexibleDashboard-src</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/FlexibleDashboard/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

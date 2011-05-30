@@ -8,7 +8,6 @@ package org.integratedsemantics.flexibleshare.share.wiki
     import flash.net.URLLoader;
     import flash.net.URLRequest;
     
-    import mx.controls.Button;
     import mx.controls.Tree;
     import mx.events.FlexEvent;
     import mx.managers.PopUpManager;
@@ -24,6 +23,8 @@ package org.integratedsemantics.flexibleshare.share.wiki
     import org.integratedsemantics.flexspaces.control.event.ui.TagsCategoriesUIEvent;
     import org.integratedsemantics.flexspaces.model.AppModelLocator;
     import org.integratedsemantics.flexspaces.model.tree.TreeNode;
+    
+    import spark.components.Button;
 
 
     public class WikiPodBase extends PodContentBase

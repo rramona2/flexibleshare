@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <wiki:WikiPodBase
-	xmlns:mx="http://www.adobe.com/2006/mxml"
-	xmlns:wiki="org.integratedsemantics.flexibleshare.share.wiki.*"
+    xmlns:fx="http://ns.adobe.com/mxml/2009" 
+    xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:wiki="org.integratedsemantics.flexibleshare.share.wiki.*"
     xmlns:rte="org.integratedsemantics.flexibleshare.share.rte.*"
+    horizontalScrollPolicy="off" verticalScrollPolicy="off"
 	width="100%" height="100%"> 
     
-    <mx:VBox width="100%" height="100%">
-        <mx:HBox>
-            <mx:Button label="New Page" id="newWikiPageBtn" click="onNewWikiPage(event)"/>            
-        </mx:HBox>
-        <mx:HBox width="100%" height="100%">
+    <s:VGroup width="100%" height="100%">
+        <s:HGroup>
+            <s:Button label="New Page" id="newWikiPageBtn" click="onNewWikiPage(event)"/>            
+        </s:HGroup>
+        <s:HGroup width="100%" height="100%">
         	<mx:Tree id="wikiTree" showRoot="false" dataProvider="{treeRoot}" change="onTreeChange(event)" width="35%" height="100%" />
-        	<mx:VBox width="65%" height="100%">    	    
+        	<s:VGroup width="65%" height="100%">    	    
 			    <rte:RichTextEdit id="rte" width="100%" height="100%" styleName="input"/>
-        		<mx:HBox>
-        			<mx:Button label="Edit" id="editBtn" click="onEdit(event)"/>			
-                    <mx:Button label="Delete" id="deleteBtn" click="onDelete(event)" enabled="false"/>         
-                    <mx:Button label="Tag" id="tagBtn" click="onTag(event)" enabled="false"/>         
-        		</mx:HBox>
-            </mx:VBox>
-        </mx:HBox>                          
-    </mx:VBox>  
+        		<s:HGroup>
+        			<s:Button label="Edit" id="editBtn" click="onEdit(event)"/>			
+                    <s:Button label="Delete" id="deleteBtn" click="onDelete(event)" enabled="false"/>         
+                    <s:Button label="Tag" id="tagBtn" click="onTag(event)" enabled="false"/>         
+        		</s:HGroup>
+            </s:VGroup>
+        </s:HGroup>                          
+    </s:VGroup>  
 </wiki:WikiPodBase>
 
