@@ -6,52 +6,51 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>com.adobe.flexbuilder.project.apollobuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
 			<name>com.adobe.flexbuilder.project.flexbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>com.adobe.flexbuilder.apollo.apollobuilder</name>
+			<name>com.adobe.flexbuilder.project.apollobuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>com.adobe.flexbuilder.project.apollonature</nature>
-		<nature>com.adobe.flexbuilder.apollo.apollonature</nature>
 		<nature>com.adobe.flexbuilder.project.flexnature</nature>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
 	<linkedResources>
 		<link>
-			<name>[source path] FlexSpaces-src</name>
-			<type>2</type>
-			<locationURI>DOCUMENTS/FlexSpaces/src</locationURI>
-		</link>
-		<link>
-			<name>[source path] FlexSpacesAir-src</name>
-			<type>2</type>
-			<locationURI>DOCUMENTS/FlexSpacesAir/src</locationURI>
-		</link>
-		<link>
-			<name>[source path] FlexibleDashboard-src</name>
-			<type>2</type>
-			<locationURI>DOCUMENTS/FlexibleDashboard/src</locationURI>
-		</link>
-		<link>
-			<name>[source path] FlexibleDashboardAir-src</name>
-			<type>2</type>
-			<locationURI>DOCUMENTS/FlexibleDashboardAir/src</locationURI>
-		</link>
-		<link>
 			<name>[source path] FlexibleShare-src</name>
 			<type>2</type>
 			<locationURI>DOCUMENTS/FlexibleShare/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] flexible-dashboard-assets-runtime-src</name>
+			<type>2</type>
+			<locationURI>FLEXIBLEDASHBOARD/flexible-dashboard-assets-runtime/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] flexible-dashboard-pod-modules-src</name>
+			<type>2</type>
+			<locationURI>FLEXIBLEDASHBOARD/flexible-dashboard-pod-modules/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] flexible-dashboardair-pod-modules-src</name>
+			<type>2</type>
+			<locationURI>FLEXIBLEDASHBOARD/flexible-dashboardair-pod-modules/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] flexspaces-assets-runtime-src</name>
+			<type>2</type>
+			<locationURI>FLEXSPACES/flexspaces-assets-runtime/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] flexspaces-tinymce-src</name>
+			<type>2</type>
+			<locationURI>FLEXSPACES/flexspaces-tinymce/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

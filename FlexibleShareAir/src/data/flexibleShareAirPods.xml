@@ -5,27 +5,28 @@ To keep the implementation straightforward, all of the data is
 stored in this file rather than a database or separate XML files.
 -->
 <views>
-	<!--
-		<view> - Represents a tab.
-			id - Must be unique so state can be saved properly.
-			label - The label of the tab.
-			<pod>
-				id - Must be unique per view so state can be saved properly.
-				type - Type of pod content. Valid values are chart, pieChart, form and list. "chart" and "pieChart" each have drill downs to one level.
-					   "chart" is a fixed drill down to 30 days in a month.
-					   "pieChart" is a fixed drill down to four geographical regions.
-				title - The title of the pod.
-				dataSource - The xml to load for the pod.
-				selectedViewIndex - Sets the default content view for pod content with a view stack. 
-				valueField - For chart pods, the field from the xml data to use for displaying the value. This field should be numeric.
-				categoryField - For chart pods, the field from the xml data to use for displaying the category.
-				dataTipUnitLabel - Rollover label used for displaying the units.
-								   Label is delimited by "*" and places the first value before the unit and the second value after the unit. Ex: $50M.
-				dataTipLabelField - Rollover label field used for PieCharts.
-				labels - For form pods, used to label the fields.
-				dataFields - For form pods, used to assign the data fields to the form fields.
-							 The second field should always be a date expressed in milliseconds since the epoch.
-	-->
+    <!--
+        <view> - Represents a tab.
+            id - Must be unique so state can be saved properly.
+            label - The label of the tab.
+            <pod>
+                id - Must be unique per view so state can be saved properly.
+                type - Type of pod content. Valid values are chart, pieChart, form and list. "chart" and "pieChart" each have drill downs to one level.
+                       "chart" is a fixed drill down to 30 days in a month.
+                       "pieChart" is a fixed drill down to four geographical regions.
+                title - The title of the pod.
+                dataSource - The xml to load for the pod.
+                selectedViewIndex - Sets the default content view for pod content with a view stack. 
+                valueField - For chart pods, the field from the xml data to use for displaying the value. This field should be numeric.
+                categoryField - For chart pods, the field from the xml data to use for displaying the category.
+                dataTipUnitLabel - Rollover label used for displaying the units.
+                                   Label is delimited by "*" and places the first value before the unit and the second value after the unit. Ex: $50M.
+                dataTipLabelField - Rollover label field used for PieCharts.
+                labels - For form pods, used to label the fields.
+                dataFields - For form pods, used to assign the data fields to the form fields.
+                             The second field should always be a date expressed in milliseconds since the epoch.
+    -->
+    
     <view
         id="viewFlexspaces"
         label="FlexSpaces">
@@ -41,18 +42,18 @@ stored in this file rather than a database or separate XML files.
             title="Search"
             module="org/integratedsemantics/flexibleshareair/flexspaces/search/SearchPod.swf"         
             /-->
-        <pod
+        <!--pod
             id="flexspaces3"
             type="simplesearch"
             title="Search"
             module="org/integratedsemantics/flexibleshareair/flexspaces/search/SimpleSearchPod.swf"         
-            />
-        <pod
+            /-->
+        <!--pod
             id="flexspaces4"
             type="tasks"
             title="Tasks"
             module="org/integratedsemantics/flexibleshareair/flexspaces/tasks/TasksPod.swf"         
-            />
+            /-->
         <!--pod
             id="flexspaces5"
             type="wcm"
@@ -65,12 +66,12 @@ stored in this file rather than a database or separate XML files.
             title="All FlexSpaces"
             module="org/integratedsemantics/flexibleshareair/flexspaces/all/FlexSpacesAirPod.swf"         
             />
-        <pod
+        <!-- pod
             id="flexspaces7"
             type="localfiles"
             title="Local Files"
             module="org/integratedsemantics/flexibledashboardair/localfiles/LocalFilesPod.swf"                        
-            />      
+            /-->      
     </view>
 	
 	<view
@@ -164,7 +165,7 @@ stored in this file rather than a database or separate XML files.
             dataTipUnitLabel="$*M"
             dataTipLabelField="region"/>
     </view>
-    
+
     <view
         id="viewJasperReports"
         label="JasperReports">
@@ -177,7 +178,7 @@ stored in this file rather than a database or separate XML files.
             />
     </view> 
     
-    <view
+    <!--view
         id="viewPentaho"
         label="Pentaho Charts">
         <pod
@@ -186,9 +187,9 @@ stored in this file rather than a database or separate XML files.
             title="Pentaho"
             module="org/integratedsemantics/flexibledashboard/pentaho/PentahoPod.swf"
             />
-    </view>     
+    </view -->     
 	
-    <view
+    <!--view
         id="viewHTML"
         label="HTML">
         <pod
@@ -203,6 +204,6 @@ stored in this file rather than a database or separate XML files.
             title="Google"
             module="org/integratedsemantics/flexibledashboardair/html/HtmlPod.swf"
             url="http://www.google.com" />  
-    </view>
+    </view-->
     	
 </views>

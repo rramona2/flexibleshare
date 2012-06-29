@@ -10,8 +10,15 @@
     minWidth="700" minHeight="500" width="1000" height="700" 
     showStatusBar="false">
 
-    <fx:Style source="flexibledashboard.css" />
-    <fx:Style source="flexibleshareair.css" />
+    <fx:Style source="css/flexibledashboard.css" />
+	
+	<fx:Style source="css/flexspaces.css" />	
+	<fx:Style source="css/dialog.css"/>
+	<fx:Style source="css/login.css"/>
+	<fx:Style source="css/logout.css"/>
+	<fx:Style source="css/search.css"/>
+	
+    <fx:Style source="css/flexibleshareair.css" />
 
     <app:layout>
         <s:VerticalLayout horizontalAlign="left"
