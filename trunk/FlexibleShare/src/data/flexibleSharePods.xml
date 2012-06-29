@@ -26,33 +26,34 @@ stored in this file rather than a database or separate XML files.
 				dataFields - For form pods, used to assign the data fields to the form fields.
 							 The second field should always be a date expressed in milliseconds since the epoch.
 	-->
+
 	<view
 		id="viewFlexspaces"
 		label="FlexSpaces">
-		<pod
+		<!-- pod
 			id="flexspaces1"
 			type="doclib"
 			title="DocLib"
 			module="org/integratedsemantics/flexibleshare/flexspaces/doclib/DocLibPod.swf"
-			/>
+			/-->
 		<!--pod
 			id="flexspaces2"
 			type="search"
 			title="Search"
             module="org/integratedsemantics/flexibleshare/flexspaces/search/SearchPod.swf"         
 			/-->
-        <pod
+        <!-- pod
             id="flexspaces3"
             type="simplesearch"
             title="Search"
             module="org/integratedsemantics/flexibleshare/flexspaces/search/SimpleSearchPod.swf"         
-            />
-		<pod
+            /-->
+		<!-- pod
 			id="flexspaces4"
 			type="tasks"
 			title="Tasks"
             module="org/integratedsemantics/flexibleshare/flexspaces/tasks/TasksPod.swf"         
-			/>
+			/-->
 		<!--pod
 			id="flexspaces5"
 			type="wcm"
@@ -153,7 +154,7 @@ stored in this file rather than a database or separate XML files.
             dataTipLabelField="region"/>
     </view>
     
-    <!--view
+    <view
         id="viewJasperReports"
         label="JasperReports">
         <pod
@@ -163,7 +164,7 @@ stored in this file rather than a database or separate XML files.
             module="org/integratedsemantics/flexibledashboard/jasperreports/ReportPod.swf"
             reporturl="reports/WebappReport.jrpxml"
             />
-    </view--> 
+    </view> 
     
     <!--view
         id="viewPentaho"
