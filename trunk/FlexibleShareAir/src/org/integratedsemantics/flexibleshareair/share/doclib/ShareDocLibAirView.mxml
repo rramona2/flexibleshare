@@ -19,7 +19,6 @@
         <![CDATA[
         import mx.events.FlexEvent;
         
-        [Bindable]
         public var site:String;
 
         override protected function onRepoBrowserCreated(event:FlexEvent):void
@@ -29,11 +28,12 @@
             //showHideRepoTree();
             showHideNavPanel();
             
-            this.callLater(setSitePath);        
+            //this.callLater(setSitePath);        
         }
         
-        protected function setSitePath():void
-        {
+		public function setSitePath(site:String):void
+		{
+			this.site = site;
             browserView.setPath("/Company Home/Sites/" + site + "/documentLibrary");               
         }
 

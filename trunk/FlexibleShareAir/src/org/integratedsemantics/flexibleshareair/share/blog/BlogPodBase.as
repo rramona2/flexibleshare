@@ -1,6 +1,5 @@
 package org.integratedsemantics.flexibleshareair.share.blog
 {
-    import com.adobe.serialization.json.JSON;
     import com.esria.samples.dashboard.view.PodContentBase;
     
     import flash.events.Event;
@@ -8,6 +7,7 @@ package org.integratedsemantics.flexibleshareair.share.blog
     import flash.net.URLLoader;
     import flash.net.URLRequest;
     
+    import mx.collections.ArrayCollection;
     import mx.controls.HTML;
     import mx.controls.Tree;
     import mx.events.FlexEvent;
@@ -26,6 +26,8 @@ package org.integratedsemantics.flexibleshareair.share.blog
     import org.integratedsemantics.flexspaces.model.tree.TreeNode;
     
     import spark.components.Button;
+    import spark.components.DropDownList;
+    import spark.events.IndexChangeEvent;
 
     
     public class BlogPodBase extends PodContentBase
@@ -37,9 +39,13 @@ package org.integratedsemantics.flexibleshareair.share.blog
         public var editBtn:Button;
         public var deleteBtn:Button;
         public var tagBtn:Button;
+		public var siteListDropDown:DropDownList;
 
         [Bindable]
         protected var treeRoot:TreeNode = new TreeNode("Blog Posts", "Blog Posts");
+		
+		[Bindable]
+		protected var siteList:ArrayCollection = new ArrayCollection();
         
         private var allTreeNode:TreeNode;
         private var latestTreeNode:TreeNode;
@@ -67,6 +73,7 @@ package org.integratedsemantics.flexibleshareair.share.blog
         {
             super.onCreationComplete(e);
 
+			// todo: use initial site configured if not empty string or null
             site = properties.@siteUrlName;    
 
             allTreeNode = new TreeNode("All", "all");
@@ -83,15 +90,24 @@ package org.integratedsemantics.flexibleshareair.share.blog
 
             myExternPublishedTreeNode = new TreeNode("Published Externally", "publishedexternally");
             treeRoot.children.addItem(myExternPublishedTreeNode);
-            
-            getAllPosts(); 
-            getLatestPosts();
-            getMyDraftPosts();
-            getMyPublishedPosts();
-            getPublishedExternallyPosts();
-            
-            blogTree.expandChildrenOf(treeRoot, true);       
-        }
+                        
+            blogTree.expandChildrenOf(treeRoot, true);  
+			
+			getSites();
+		}
+		
+		protected function getSites():void
+		{
+			var service:HTTPService = new HTTPService;
+			service.url = model.ecmServerConfig.urlPrefix + "/api/sites";
+			service.resultFormat = "text";
+			service.addEventListener(ResultEvent.RESULT, onJSONSites);            
+			service.addEventListener(FaultEvent.FAULT, onFault);
+			var result:AsyncToken = null;
+			var parameters:Object = new Object();
+			parameters.alf_ticket = model.userInfo.loginTicket;
+			result = service.send(parameters);                  
+		}
 
         protected function getAllPosts():void
         {
@@ -172,7 +188,12 @@ package org.integratedsemantics.flexibleshareair.share.blog
             getMyPublishedPosts();
             getPublishedExternallyPosts();            
         }
-        
+
+		private function onJSONSites(event:ResultEvent):void
+		{
+			addSites(event.result);        
+		}
+				
         private function onJSONLoadAll(event:ResultEvent):void
         {
             addPosts(event.result, allTreeNode);        
@@ -203,10 +224,17 @@ package org.integratedsemantics.flexibleshareair.share.blog
             trace("get posts fault");           
         }
         
+		private function addSites(data:Object):void
+		{
+			var dataStr:String = String(data);
+			var obj:Object = JSON.parse(dataStr);      
+			siteList.source = obj as Array;
+		}		
+		
         private function addPosts(data:Object, parent:TreeNode):void
         {
             var dataStr:String = String(data);
-            var obj:Object = JSON.decode(dataStr);      
+            var obj:Object = JSON.parse(dataStr);      
             var items:Array = obj.items as Array;
             for each (var item:Object in items)
             {
@@ -219,7 +247,8 @@ package org.integratedsemantics.flexibleshareair.share.blog
                 blogPost.id = blogPost.nodeRef.substr(24);
                 parent.children.addItem(blogPost);
                 blogTree.setItemIcon(blogPost, postIcon, null);       
-            }                        
+            }    
+			blogTree.expandChildrenOf(parent, true);			
         }
                      
         protected function onTreeChange(event:Event):void
@@ -277,7 +306,7 @@ package org.integratedsemantics.flexibleshareair.share.blog
             obj.draft = blogPost.isDraft;
             obj.site = site;            
             obj.title = blogPost.title;
-            var jsonStr:String = JSON.encode(obj);                        
+            var jsonStr:String = JSON.stringify(obj);                        
             
             var request:URLRequest = new URLRequest(url);
             request.contentType = "application/json";
@@ -360,7 +389,7 @@ package org.integratedsemantics.flexibleshareair.share.blog
             obj.draft = blogPost.isDraft;
             obj.site = site;            
             obj.title = blogPost.title;
-            var jsonStr:String = JSON.encode(obj);                        
+            var jsonStr:String = JSON.stringify(obj);                        
             
             var request:URLRequest = new URLRequest(url);
             request.contentType = "application/json";
@@ -392,6 +421,17 @@ package org.integratedsemantics.flexibleshareair.share.blog
         protected function onConfigureExternalBlog(event:Event):void
         {
         }
-    
+ 
+		protected function onSelectSite(event:IndexChangeEvent):void
+		{	
+			if (siteList.length > 0)
+			{
+				var siteInfo:Object = siteList.getItemAt(event.newIndex);
+				this.site = siteInfo.shortName;
+			}
+			htmlControl.htmlText = ""; 			
+			updateAll();
+		}
+		
     }
 }

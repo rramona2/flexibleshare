@@ -7,7 +7,10 @@
 	xmlns:doclib="org.integratedsemantics.flexibleshareair.share.doclib.*" 
 	width="100%" height="100%">		
          
-    <fx:Style source="flexspaces.css" />   
+	<fx:Style source="css/flexspaces.css" /> 
+	<fx:Style source="css/dialog.css"/>
+	<fx:Style source="css/logout.css"/>
+	<fx:Style source="css/search.css"/>
     
     <fx:Script>
         <![CDATA[
@@ -19,7 +22,14 @@
         ]]>
     </fx:Script>    
     
-    <doclib:ShareDocLibAirView site="{site}" id="shareDocLibView" flexSpacesAirPresModel="{presModel}" width="100%" height="100%"/>
 
+	<s:VGroup width="100%" height="100%">
+		<s:HGroup>
+			<s:DropDownList id="siteListDropDown" dataProvider="{siteList}" labelField="title" prompt="Select Site ..."   width="175" change="onSelectSite(event)" />			
+		</s:HGroup>
+		<doclib:ShareDocLibAirView id="shareDocLibView" flexSpacesAirPresModel="{presModel}" width="100%" height="100%"/>
+	</s:VGroup>  
+	
+	
 </doclib:ShareDocLibPodBase>
 

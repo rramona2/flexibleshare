@@ -1,6 +1,5 @@
 package org.integratedsemantics.flexibleshareair.share.wiki
 {
-    import com.adobe.serialization.json.JSON;
     import com.esria.samples.dashboard.view.PodContentBase;
     
     import flash.events.Event;
@@ -8,6 +7,7 @@ package org.integratedsemantics.flexibleshareair.share.wiki
     import flash.net.URLLoader;
     import flash.net.URLRequest;
     
+    import mx.collections.ArrayCollection;
     import mx.controls.HTML;
     import mx.controls.Tree;
     import mx.events.FlexEvent;
@@ -26,6 +26,8 @@ package org.integratedsemantics.flexibleshareair.share.wiki
     import org.integratedsemantics.flexspaces.model.tree.TreeNode;
     
     import spark.components.Button;
+    import spark.components.DropDownList;
+    import spark.events.IndexChangeEvent;
 
 
     public class WikiPodBase extends PodContentBase
@@ -36,9 +38,13 @@ package org.integratedsemantics.flexibleshareair.share.wiki
         public var editBtn:Button;
         public var deleteBtn:Button;
         public var tagBtn:Button;
+		public var siteListDropDown:DropDownList;
 
         [Bindable]
         protected var treeRoot:TreeNode = new TreeNode("Pages", "Pages");
+		
+		[Bindable]
+		protected var siteList:ArrayCollection = new ArrayCollection();
         
         private var recentlyModifiedNode:TreeNode;
         private var allTreeNode:TreeNode;
@@ -65,6 +71,7 @@ package org.integratedsemantics.flexibleshareair.share.wiki
         {
             super.onCreationComplete(e);
 
+			// todo: use initial site configured if not empty string or null
             site = properties.@siteUrlName;    
 
             recentlyModifiedNode = new TreeNode("Recently Modified", "recentlymodified");
@@ -79,13 +86,24 @@ package org.integratedsemantics.flexibleshareair.share.wiki
             myPagesTreeNode = new TreeNode("My Pages", "mypages");
             treeRoot.children.addItem(myPagesTreeNode);
 
-            getRecentlyModifiedPages();
-            getAllPages(); 
-            getRecentlyAddedPages();
-            getMyPages();
-            
             wikiTree.expandChildrenOf(treeRoot, true);       
-        }
+			
+			getSites();
+		}
+		
+		protected function getSites():void
+		{
+			var service:HTTPService = new HTTPService;
+			service.url = model.ecmServerConfig.urlPrefix + "/api/sites";
+			service.resultFormat = "text";
+			service.addEventListener(ResultEvent.RESULT, onJSONSites);            
+			service.addEventListener(FaultEvent.FAULT, onFault);
+			var result:AsyncToken = null;
+			var parameters:Object = new Object();
+			parameters.alf_ticket = model.userInfo.loginTicket;
+			result = service.send(parameters);                  
+		}
+		
 
         protected function getRecentlyModifiedPages():void
         {
@@ -155,6 +173,11 @@ package org.integratedsemantics.flexibleshareair.share.wiki
             getMyPages();
         }
                
+		private function onJSONSites(event:ResultEvent):void
+		{
+			addSites(event.result);        
+		}
+		
         private function onJSONLoadRecentlyModified(event:ResultEvent):void
         {
             addPages(event.result, recentlyModifiedNode);        
@@ -180,10 +203,17 @@ package org.integratedsemantics.flexibleshareair.share.wiki
             trace("get topics fault");           
         }
         
+		private function addSites(data:Object):void
+		{
+			var dataStr:String = String(data);
+			var obj:Object = JSON.parse(dataStr);      
+			siteList.source = obj as Array;
+		}		
+		
         private function addPages(data:Object, parent:TreeNode):void
         {
             var dataStr:String = String(data);
-            var obj:Object = JSON.decode(dataStr);      
+            var obj:Object = JSON.parse(dataStr);      
             var items:Array = obj.pages as Array;
             for each (var item:Object in items)
             {
@@ -255,7 +285,7 @@ package org.integratedsemantics.flexibleshareair.share.wiki
             obj.title = wikiPage.title;
             obj.forceSave = "true";
             obj.page = "wiki-page";
-            var jsonStr:String = JSON.encode(obj);      
+            var jsonStr:String = JSON.stringify(obj);      
             
             var request:URLRequest = new URLRequest(url);
             request.contentType = "application/json";
@@ -339,7 +369,7 @@ package org.integratedsemantics.flexibleshareair.share.wiki
             obj.title = wikiPage.title;
             obj.forceSave = "true";
             obj.page = "wiki-page";
-            var jsonStr:String = JSON.encode(obj);                        
+            var jsonStr:String = JSON.stringify(obj);                        
             
             var request:URLRequest = new URLRequest(url);
             request.contentType = "application/json";
@@ -362,6 +392,17 @@ package org.integratedsemantics.flexibleshareair.share.wiki
         {
             trace("URLLoader onIOErrorCreateWikiPage()");
         }
+		
+		protected function onSelectSite(event:IndexChangeEvent):void
+		{	
+			if (siteList.length > 0)
+			{
+				var siteInfo:Object = siteList.getItemAt(event.newIndex);
+				this.site = siteInfo.shortName;
+			}
+			htmlControl.htmlText = ""; 			
+			updateAll();
+		}			
     
     }
 }
