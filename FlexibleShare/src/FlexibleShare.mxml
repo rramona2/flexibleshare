@@ -8,10 +8,17 @@
     xmlns:control="org.integratedsemantics.flexspaces.control.*"
     xmlns:login="org.integratedsemantics.flexspaces.view.login.*"
     minWidth="700" minHeight="500" width="100%" height="100%">
-
-    <fx:Style source="flexibledashboard.css" />
-    <fx:Style source="flexibleshare.css" />    
-    
+	
+    <fx:Style source="css/flexibledashboard.css" />
+	
+	<fx:Style source="css/flexspaces.css" />	
+	<fx:Style source="css/dialog.css"/>
+	<fx:Style source="css/login.css"/>
+	<fx:Style source="css/logout.css"/>
+	<fx:Style source="css/search.css"/>
+	
+	<fx:Style source="css/flexibleshare.css" />    
+	    
     <app:layout>
         <s:VerticalLayout horizontalAlign="left"
             paddingLeft="4" paddingRight="4" paddingBottom="4" paddingTop="4"/>

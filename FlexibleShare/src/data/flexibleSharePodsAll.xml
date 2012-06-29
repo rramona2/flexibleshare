@@ -107,42 +107,6 @@ stored in this file rather than a database or separate XML files.
             siteUrlName="s1"
             />
     </view>   
-
-   <!-- to use these grid pods need to add channelset config from flexibledashboard spring-actionacript/application-context.xml into flexspacesconfig.xml -->
-   <view
-      id="viewGrid"
-      label="Grids">
-        <pod
-            id="grid1"
-            type="grid"
-            title="Data Grid with gridpod-context1.xml"
-            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
-            contextFile="spring-actionscript/gridpod-context1.xml"
-            />  
-        <pod
-            id="grid2"
-            type="grid"
-            title="Data Grid with gridpod-context2.xml"
-            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
-            contextFile="spring-actionscript/gridpod-context2.xml"
-            />  
-        <pod
-            id="grid3"
-            type="grid"
-            title="Data Grid with gridpod-context3.xml"
-            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
-            contextFile="spring-actionscript/gridpod-context3.xml"
-            />  
-        <pod
-            id="chartgrid1"
-            type="chartgrid"
-            title="Chart + Data Grid with chartgridpod-context.xml"
-            module="org/integratedsemantics/flexibledashboard/grid/ChartGridPod.swf"
-            valueField="price"
-            categoryField="name"            
-            contextFile="spring-actionscript/chartgridpod-context.xml"        
-            />  
-   </view> 
    
    <view
       id="viewCharts"
@@ -259,24 +223,25 @@ stored in this file rather than a database or separate XML files.
          />       
    </view>
 
-   <!--  non-air html (iframe) has issues currently: cascade mode - can't move pod to front -->
-   <!--  tile mode - snap in place portal style drag/drop doesn't kick in --> 
+   <!-- note: google.com and yahoo.com now don't allow display in an iframe in a browser, other sites may disallow also -->
+   <!-- Desktop AIR and Mobile AIR are ok with these sites since don't have to use an iframe to view html -->
+   <!-- on FireFox 13, iframes will position incorrectly in flash builder debugger (filepath to app swf), but will be ok in tomcat thru a url path to app swf -->
    <view
       id="viewHTML"
       label="HTML">
         <pod
             id="html1"
             type="html"
-            title="Google"
+            title="Bing"
             module="org/integratedsemantics/flexibledashboard/html/IFramePod.swf"
-            url="http://www.google.com" />  
+            url="http://www.bing.com" />  
         <pod
             id="html2"
             type="html"
-            title="Yahoo"
+            title="Wikipedia"
             module="org/integratedsemantics/flexibledashboard/html/IFramePod.swf"
-            url="http://www.yahoo.com" />  
-   </view>     
+            url="http://www.wikipedia.org" />  
+   </view>   
    
     <view
         id="viewOlap"
@@ -313,5 +278,40 @@ stored in this file rather than a database or separate XML files.
             report="SalesInvoice.rptdesign"
             />  
    </view>     
+
+   <view
+      id="viewGrid"
+      label="Grids">
+        <pod
+            id="grid1"
+            type="grid"
+            title="Data Grid with gridpod-context1.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
+            contextFile="spring-actionscript/gridpod-context1.xml"
+            />  
+        <pod
+            id="grid2"
+            type="grid"
+            title="Data Grid with gridpod-context2.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
+            contextFile="spring-actionscript/gridpod-context2.xml"
+            />  
+        <pod
+            id="grid3"
+            type="grid"
+            title="Data Grid with gridpod-context3.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/GridPod.swf"
+            contextFile="spring-actionscript/gridpod-context3.xml"
+            />  
+        <pod
+            id="chartgrid1"
+            type="chartgrid"
+            title="Chart + Data Grid with chartgridpod-context.xml"
+            module="org/integratedsemantics/flexibledashboard/grid/ChartGridPod.swf"
+            valueField="price"
+            categoryField="name"            
+            contextFile="spring-actionscript/chartgridpod-context.xml"        
+            />  
+   </view> 
 
 </views>

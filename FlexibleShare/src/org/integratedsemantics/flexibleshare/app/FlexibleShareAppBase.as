@@ -1,44 +1,44 @@
 package org.integratedsemantics.flexibleshare.app
 {
 	import com.esria.samples.dashboard.managers.PodLayoutManager;
-    import com.esria.samples.dashboard.view.IPodContentBase;
+	import com.esria.samples.dashboard.view.IPodContentBase;
 	import com.esria.samples.dashboard.view.Pod;
 	
 	import flash.events.Event;
-    import flash.system.ApplicationDomain;
+	import flash.system.ApplicationDomain;
 	import flash.utils.Dictionary;
 	
 	import flexlib.mdi.containers.MDICanvas;
-    import flexlib.mdi.containers.MDIWindow;
-    import flexlib.mdi.managers.MDIManager;
+	import flexlib.mdi.containers.MDIWindow;
+	import flexlib.mdi.managers.MDIManager;
 	
-    import mx.charts.chartClasses.DataTip;    
+	import mx.charts.chartClasses.DataTip;
 	import mx.containers.ViewStack;
 	import mx.controls.Alert;
-    import mx.events.FlexEvent;
-    import mx.events.ModuleEvent;    
-    import mx.modules.IModuleInfo;
-    import mx.modules.Module;
-    import mx.modules.ModuleManager;   
+	import mx.events.FlexEvent;
+	import mx.events.ModuleEvent;
+	import mx.modules.IModuleInfo;
+	import mx.modules.Module;
+	import mx.modules.ModuleManager;
 	import mx.rpc.Responder;
 	import mx.rpc.events.FaultEvent;
 	import mx.rpc.events.ResultEvent;
 	import mx.rpc.http.HTTPService;
 	
-    import org.integratedsemantics.flexibledashboard.data.RemoteObjectDataService;
-    import org.integratedsemantics.flexibledashboard.data.SoapDataService;
-    import org.integratedsemantics.flexibledashboard.data.XmlDataService;
-    
+	import org.integratedsemantics.flexibledashboard.data.RemoteObjectDataService;
+	import org.integratedsemantics.flexibledashboard.data.SoapDataService;
+	import org.integratedsemantics.flexibledashboard.data.XmlDataService;
 	import org.integratedsemantics.flexspaces.app.AppBase;
 	import org.integratedsemantics.flexspaces.control.event.GetInfoEvent;
 	import org.integratedsemantics.flexspaces.view.login.LoginDoneEvent;
 	import org.integratedsemantics.flexspaces.view.login.LoginViewBase;
-
-    import org.springextensions.actionscript.context.support.FlexXMLApplicationContext;
-    import org.springextensions.actionscript.module.ISASModule;
-    
-    import spark.components.TabBar;
-    import spark.events.IndexChangeEvent;
+	import org.integratedsemantics.flexspaces.view.properties.tagscategories.TagsCategoriesView;
+	import org.integratedsemantics.flexspaces.view.search.advanced.AdvancedSearchView;
+	import org.springextensions.actionscript.context.support.FlexXMLApplicationContext;
+	import org.springextensions.actionscript.module.ISASModule;
+	
+	import spark.components.TabBar;
+	import spark.events.IndexChangeEvent;
 
     
 	public class FlexibleShareAppBase extends AppBase
@@ -80,10 +80,12 @@ package org.integratedsemantics.flexibleshare.app
         
         private var viewIndex:int = 0;
         
-        // force compiler to include these classes
+        // force compiler to include these classes for spring actionscript app context xml config fle dependencies
         private var remoteObjectDataService:RemoteObjectDataService;
         private var soapDataService:SoapDataService;
         private var xmlDataService:XmlDataService;
+		private var advSearchView:AdvancedSearchView;
+		private var tagCategoriesView:TagsCategoriesView;
         
         private var _applicationContext:FlexXMLApplicationContext;		
 
@@ -92,14 +94,20 @@ package org.integratedsemantics.flexibleshare.app
 		{
 			super();
 		}
-					
+		
+		override protected function loadConfig():void
+		{
+			// spring actionscript config
+			model.applicationContext = new FlexXMLApplicationContext("FlexibleShareConfig.xml");
+			_applicationContext = model.applicationContext;
+			model.applicationContext.addEventListener(Event.COMPLETE, onApplicationContextComplete);
+			model.applicationContext.load();                                          
+		}
+							
         override protected function onApplicationContextComplete(event:Event):void
         {
         	super.onApplicationContextComplete(event);
         	
-            // todo note: spring actionscript app context xml from flexspaces doesn't have
-            // data source sample config in flexibledashboard spring actionscirpt app context xml
-            
             modeViewStack.selectedIndex = LOGIN_MODE_INDEX;            
         }
 							
@@ -172,6 +180,8 @@ package org.integratedsemantics.flexibleshare.app
                 canvas.percentWidth = 100;
                 canvas.percentHeight = 100;
                 canvas.windowManager.tilePadding = 10;
+				
+				//todo canvas.toolTip = viewXMLList[i].@toolTip;
                 
                 viewStack.addChild(canvas);
                 
@@ -237,35 +247,39 @@ package org.integratedsemantics.flexibleshare.app
         {
             var info:IModuleInfo = event.module;
             
-            //var podContent:IPodContentBase = info.factory.create() as IPodContentBase;					
+			var pod:Pod = new Pod();
+
+			//var podContent:IPodContentBase = info.factory.create() as IPodContentBase;					            
             
-            var module:ISASModule = info.factory.create() as ISASModule;
+			var module:ISASModule = info.factory.create() as ISASModule;
             //set the applicationContext property, inside the BasicSASModule this
             //will automatically be set as the moduleApplicationContext's parent
             module.applicationContext = _applicationContext;
             (module as Module).data = info;		
             var podContent:IPodContentBase = module as IPodContentBase;					
             
-            var podConfig:XML = _moduleConfigList[info] as XML;
-            var manager:PodLayoutManager = _moduleLayoutMgrList[info];			
-            cleanupInfo(info);
-            
-            
-            var viewId:String = manager.id;
-            var podId:String = podConfig.@id;
-            
-            podContent.properties = podConfig;
-            var pod:Pod = new Pod();
-            pod.id = podId;
-            pod.title = podConfig.@title;
-            
-            pod.addElement(podContent);
+			podContent.pod = pod;
+
+			var podConfig:XML = _moduleConfigList[info] as XML;
+			podContent.properties = podConfig;
+
+			var podId:String = podConfig.@id;
+			pod.id = podId;
+			pod.title = podConfig.@title;
+                        
+			var manager:PodLayoutManager = _moduleLayoutMgrList[info];			
+			podContent.podManager = manager;
+
+			pod.addElement(podContent);
             
             manager.addItemAt(pod, -1, false);						
             
             podHash[pod] = manager;		
             
-            numPodsDoneInView++;
+			cleanupInfo(info);
+
+			numPodsDoneInView++;
+			
             if (numPodsDoneInView == numPodsInView)
             {
                 // all pods complete so now the layout can be done correctly. 
@@ -299,7 +313,7 @@ package org.integratedsemantics.flexibleshare.app
 		{
 		    var index:int = viewStack.selectedIndex;
 		    var mgr:PodLayoutManager = podLayoutManagers[index];
-		    mgr.tile();  
+		    mgr.tile(false, 10);  
 		}
         
         // mdi

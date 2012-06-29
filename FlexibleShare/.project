@@ -17,14 +17,19 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>[source path] FlexSpaces-src</name>
+			<name>[source path] flexible-dashboard-assets-runtime-src</name>
 			<type>2</type>
-			<locationURI>DOCUMENTS/FlexSpaces/src</locationURI>
+			<locationURI>FLEXIBLEDASHBOARD/flexible-dashboard-assets-runtime/src</locationURI>
 		</link>
 		<link>
-			<name>[source path] FlexibleDashboard-src</name>
+			<name>[source path] flexible-dashboard-pod-modules-src</name>
 			<type>2</type>
-			<locationURI>DOCUMENTS/FlexibleDashboard/src</locationURI>
+			<locationURI>FLEXIBLEDASHBOARD/flexible-dashboard-pod-modules/src</locationURI>
+		</link>
+		<link>
+			<name>[source path] flexspaces-assets-runtime-src</name>
+			<type>2</type>
+			<locationURI>FLEXSPACES/flexspaces-assets-runtime/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
