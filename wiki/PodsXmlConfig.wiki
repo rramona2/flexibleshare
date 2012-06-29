@@ -3,7 +3,7 @@
   # see data/flexibleShareAirPodsAll.xml for all possible pods
   # some pods are commented out, can be added back in
   # xml files used for in browser non air FlexibleShare is data/flexibleSharePods.xml (with example of all possible pods in data/flexibleSharePodsAll.xmll)
-  # ignore the flexibleDashboard xml files
+
 
 ==Overall pod xml structure==
   # each view section sets up a tab view
@@ -25,7 +25,7 @@
   # no commenting in blog, discussions, doclib yet
   # calendar doesn't have read of info from share calendar, or add events yet (can load a us_holiday.ics, other ics) (calendar from Ely Greenfield's quietlyscheming.com)
   # the share pods are protypes
-  # the share site for thse pods can be set in pods xml: siteUrlName="s1"
+  # the default share site for thse pods can be set in pods xml: siteUrlName="s1" (this is currently not used, need to select site in selection selection dropdown at the top left of share pods
   # (Alfresco server needs to be running, integratedsemantics.zip webscripts need to be installed,and FlexSpacesConfig.xml needs to be configured)
 
 ==Charting pods==
