@@ -6,13 +6,13 @@
 ==FlexibleShare "In Browser" Installation==
   # web script installation required first
   # copy "flexible-share" folder to <alfresco install dir>/tomcat/webapps
-  # configure domain (hostname or ip address) and port in FlexSpacesConfig.xml
+  # configure default domain (hostname or ip address) and port in FlexibleShareConfig.xml (users can override in preferences dialog)
   # run  http://localhost:8080/flexible-share/FlexibleShare.html
 
 ==FlexibleShare AIR Installation==
   # web script installation required first
-  # Run FlexibleShareAir.air to install but don't launch right after install
-  # configure domain (hostname or ip address) and port in FlexSpacesConfig.xml
-  # on 32 bit Windows FlexSpacesConfig.xml is in c:\Program Files\FlexibleShareAIR\FlexSpacesConfig.xml 
-  # on 64 bit Windows FlexSpacesConfig.xml is in C:\Program Files (x86)\FlexibleShareAir 
-  # on Mac: In finder choose "Show Package Contents" on installed FlexibleShareAir.app, FlexSpacesConfig.xml is in contents/resources/
+  # Run FlexibleShareAir.air to install but don't launch right after install if changing config file
+  # configure domain (hostname or ip address) and port in FlexibleShareConfig.xml or use preferences dialog
+  # on 32 bit Windows FlexibleShareConfig.xml is in c:\Program Files\FlexibleShareAIR
+  # on 64 bit Windows FlexibleShareConfig.xml is in C:\Program Files (x86)\FlexibleShareAir 
+  # on Mac: In finder choose "Show Package Contents" on installed FlexibleShareAir.app, FlexibleShareConfig.xml is in contents/resources/
